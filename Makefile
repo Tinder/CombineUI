@@ -45,11 +45,3 @@ analyze:
 .PHONY: rules
 rules:
 	@swiftlint rules | lint-rules
-
-.PHONY: delete-snapshots
-delete-snapshots:
-	@for snapshots in $$(find Tests -type d -name "__Snapshots__"); \
-	do \
-		rm -rf "$$snapshots"; \
-		echo "Deleted $$snapshots"; \
-	done

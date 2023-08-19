@@ -20,9 +20,6 @@ let package = Package(
         .package(
             url: "https://github.com/Quick/Nimble.git",
             from: "12.0.0"),
-        .package(
-            url: "https://github.com/pointfreeco/swift-snapshot-testing.git",
-            from: "1.11.0"),
     ],
     targets: [
         .target(
@@ -35,7 +32,6 @@ let package = Package(
             dependencies: [
                 "CombineUI",
                 "Nimble",
-                .product(name: "SnapshotTesting", package: "swift-snapshot-testing"),
             ],
             plugins: [
                 .plugin(name: SwiftLint.plugin),

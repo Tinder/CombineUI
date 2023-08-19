@@ -44,11 +44,3 @@ To enable new rules whenever SwiftLint is upgraded to a new version:
 ```
 make rules
 ```
-
-## Testing
-
-To re-record all existing snapshot references, delete all using the following command and then run the tests.
-
-```
-make delete-snapshots
-```
