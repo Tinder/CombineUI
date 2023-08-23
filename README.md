@@ -166,7 +166,7 @@ func publisher(for controlEvents: UIControl.Event) -> AnyPublisher<UIControl.Eve
 
 ### Supported Types
 
-As every CombineUI property wrapper may be used with subclasses of its supported wrapped type, this property wrapper is compatible with `UIControl` subclasses, including (but not limited to) the following:
+Just as every CombineUI property wrapper may be used with subclasses of its supported wrapped type, this property wrapper is compatible with `UIControl` subclasses, including (but not limited to) the following:
 
   - `UIButton`
   - `UIDatePicker`
