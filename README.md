@@ -10,7 +10,7 @@ CombineUI provides Swift property wrappers for select Apple types such as gestur
 
 Many types are also enhanced with Swift extensions providing publishers that may be used as an alternative to the property wrappers when needed.
 
-UIKit is currently supported. CombineUI may support additional Apple frameworks in the future.
+UIKit is currently supported. CombineUI may support additional UI frameworks in the future.
 
 ## Code Examples
 
@@ -131,18 +131,6 @@ button
 
 ## `UIControl`
 
-The `@Control` property wrapper may be used with any `UIControl` subclass, including (but not limited to) the following:
-
-  - `UIButton`
-  - `UIDatePicker`
-  - `UIPageControl`
-  - `UIRefreshControl`
-  - `UISegmentedControl`
-  - `UISlider`
-  - `UIStepper`
-  - `UISwitch`
-  - `UITextField`
-
 ### Property Wrapper
 
 ```swift
@@ -175,6 +163,20 @@ var editingDidEndOnExit: AnyPublisher<Void, Never>
 ```swift
 func publisher(for controlEvents: UIControl.Event) -> AnyPublisher<UIControl.Event, Never>
 ```
+
+### Supported Types
+
+As every CombineUI property wrapper may be used with subclasses of its supported wrapped type, this property wrapper is compatible with `UIControl` subclasses, including (but not limited to) the following:
+
+  - `UIButton`
+  - `UIDatePicker`
+  - `UIPageControl`
+  - `UIRefreshControl`
+  - `UISegmentedControl`
+  - `UISlider`
+  - `UIStepper`
+  - `UISwitch`
+  - `UITextField`
 
 ### Code Examples
 
