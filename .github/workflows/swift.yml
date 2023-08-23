@@ -13,6 +13,8 @@ jobs:
   swift:
     name: Swift
     runs-on: macos-13
+    env:
+      SIMULATOR: iPhone 14
     steps:
     - name: Checkout source
       uses: actions/checkout@v3
@@ -24,6 +26,6 @@ jobs:
         "$(find ".build/artifacts/${DIRECTORY_NAME}" -type f -name swiftlint -perm +111 -print -quit)" \
         lint --strict --reporter github-actions-logging
     - name: Build
-      run: swift build -v
+      run: xcodebuild build-for-testing -scheme "CombineUI" -destination "name=$SIMULATOR,OS=latest"
     - name: Run tests
-      run: swift test -v
+      run: xcodebuild test-without-building -scheme "CombineUI" -destination "name=$SIMULATOR,OS=latest"
