@@ -1,0 +1,83 @@
+name: Example
+options:
+  bundleIdPrefix: com.tinder
+  deploymentTarget:
+    iOS: "15.0"
+  defaultConfig: Release
+  settingPresets: none
+  usesTabs: false
+  tabWidth: 4
+  indentWidth: 4
+packages:
+  CombineUI:
+    path: ../
+configFiles:
+  Debug: BuildSettings/Debug.xcconfig
+  Release: BuildSettings/Release.xcconfig
+fileGroups:
+  - BuildSettings
+targets:
+  Example:
+    type: application
+    platform: iOS
+    dependencies:
+      - package: CombineUI
+    sources: Example
+    scheme:
+      testTargets:
+        - ExampleTests
+    configFiles:
+      Debug: Example/BuildSettings/Debug.xcconfig
+      Release: Example/BuildSettings/Release.xcconfig
+    info:
+      path: Example/Generated/Info.plist
+      properties:
+        CFBundleDevelopmentRegion: $(DEVELOPMENT_LANGUAGE)
+        CFBundleDisplayName: Example
+        CFBundleExecutable: $(EXECUTABLE_NAME)
+        CFBundleIdentifier: $(PRODUCT_BUNDLE_IDENTIFIER)
+        CFBundleInfoDictionaryVersion: "6.0"
+        CFBundleName: $(PRODUCT_NAME)
+        CFBundlePackageType: $(PRODUCT_BUNDLE_PACKAGE_TYPE)
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "1"
+        LSRequiresIPhoneOS: true
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: true
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              - UISceneConfigurationName: Default Configuration
+                UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate
+        UIApplicationSupportsIndirectInputEvents: true
+        UILaunchStoryboardName: LaunchScreen
+        UIRequiredDeviceCapabilities:
+          - armv7
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+  ExampleTests:
+    type: bundle.unit-test
+    platform: iOS
+    dependencies:
+      - target: Example
+    sources: ExampleTests
+    configFiles:
+      Debug: ExampleTests/BuildSettings/Debug.xcconfig
+      Release: ExampleTests/BuildSettings/Release.xcconfig
+    info:
+      path: ExampleTests/Generated/Info.plist
+      properties:
+        CFBundleDevelopmentRegion: $(DEVELOPMENT_LANGUAGE)
+        CFBundleExecutable: $(EXECUTABLE_NAME)
+        CFBundleIdentifier: $(PRODUCT_BUNDLE_IDENTIFIER)
+        CFBundleInfoDictionaryVersion: "6.0"
+        CFBundleName: $(PRODUCT_NAME)
+        CFBundlePackageType: $(PRODUCT_BUNDLE_PACKAGE_TYPE)
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "1"
