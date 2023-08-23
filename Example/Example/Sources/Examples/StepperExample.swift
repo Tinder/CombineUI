@@ -30,8 +30,9 @@ class StepperExample: UIViewController {
         $stepper
             .map(Int.init)
             .map(String.init)
-            .sink { [weak label] in
-                label?.text = $0
+            .sink { [weak self] in
+                guard let self else { return }
+                label.text = $0
                 print(Date(), "$stepper", "...", $0)
             }
             .store(in: &cancellables)

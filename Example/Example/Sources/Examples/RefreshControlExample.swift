@@ -46,7 +46,8 @@ class RefreshControlExample: UIViewController {
         ])
         $refreshControl
             .sink { [weak self] in
-                self?.simulateRefresh()
+                guard let self else { return }
+                simulateRefresh()
                 print(Date(), "$refreshControl")
             }
             .store(in: &cancellables)
