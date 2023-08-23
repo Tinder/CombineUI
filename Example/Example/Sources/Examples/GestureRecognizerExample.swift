@@ -8,7 +8,8 @@ import UIKit
 
 class GestureRecognizerExample: UIViewController {
 
-    @GestureRecognizer var gesture: UIPinchGestureRecognizer = .init()
+    @GestureRecognizer var pinch: UIPinchGestureRecognizer = .init()
+    @GestureRecognizer var tap: UITapGestureRecognizer = .init()
 
     let tintedView: UIView = {
         let view: UIView = .init()
@@ -40,18 +41,23 @@ class GestureRecognizerExample: UIViewController {
             label.centerXAnchor.constraint(equalTo: tintedView.centerXAnchor),
             label.centerYAnchor.constraint(equalTo: tintedView.centerYAnchor, constant: -10)
         ])
-        $gesture
+        $pinch
             .attaching(to: tintedView)
-            .sink { [weak tintedView] in
-                let scale: CGFloat = min(max(0.4, $0.scale), 1.2)
-                tintedView?.transform = CGAffineTransform(scaleX: scale, y: scale)
-                print(Date(), "$gesture.attaching(to:)", "...", $0.scale, $0.state.stringValue)
+            .sink { [weak self] in
+                guard let self else { return }
+                transformTintedView(with: $0.scale)
+                print(Date(), "$pinch.attaching(to:)", "...", $0.scale, $0.state.stringValue)
             }
             .store(in: &cancellables)
-        gesture
+        tap
             .publisher(attachingTo: tintedView)
-            .sink { print(Date(), "gesture.publisher(attachingTo:)", "...", $0.scale, $0.state.stringValue) }
+            .sink { print(Date(), "tap.publisher(attachingTo:)", "...", $0.state.stringValue) }
             .store(in: &cancellables)
+    }
+
+    func transformTintedView(with scale: CGFloat) {
+        let scale: CGFloat = min(max(0.4, scale), 1.2)
+        tintedView.transform = CGAffineTransform(scaleX: scale, y: scale)
     }
 }
 
