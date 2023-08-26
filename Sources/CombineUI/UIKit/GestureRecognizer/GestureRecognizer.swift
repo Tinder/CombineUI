@@ -5,8 +5,7 @@
 import Combine
 import UIKit
 
-// swiftlint:disable:next type_name
-public protocol _GestureRecognizer {}
+public protocol GestureRecognizable {}
 
 @propertyWrapper
 public struct GestureRecognizer<T: UIGestureRecognizer> {
@@ -20,11 +19,11 @@ public struct GestureRecognizer<T: UIGestureRecognizer> {
     }
 }
 
-extension UIGestureRecognizer: _GestureRecognizer {}
-
-extension _GestureRecognizer where Self: UIGestureRecognizer {
+extension GestureRecognizable where Self: UIGestureRecognizer {
 
     public func publisher(attachingTo view: UIView) -> AnyPublisher<Self, Never> {
         GestureRecognizerPublisher(gestureRecognizer: self, view: view).eraseToAnyPublisher()
     }
 }
+
+extension UIGestureRecognizer: GestureRecognizable {}
