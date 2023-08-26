@@ -24,7 +24,7 @@ extension UISegmentedControl {
 
     public func selectedSegmentIndexPublisher() -> AnyPublisher<Int, Never> {
         publisher(for: .valueChanged)
-            .weakPublisher(self)
+            .compactMap(bindable)
             .map(\.selectedSegmentIndex)
             .prepend(selectedSegmentIndex)
             .eraseToAnyPublisher()

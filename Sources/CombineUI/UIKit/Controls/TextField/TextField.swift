@@ -21,7 +21,7 @@ extension UITextField {
 
     public func textPublisher() -> AnyPublisher<String, Never> {
         publisher(for: .allEditingEvents)
-            .weakPublisher(self)
+            .compactMap(bindable)
             .map(\.text)
             .prepend(text)
             .map { $0 ?? "" }
@@ -32,7 +32,7 @@ extension UITextField {
     @available(iOS 15, *)
     public func attributedTextPublisher() -> AnyPublisher<NSAttributedString, Never> {
         publisher(for: .allEditingEvents)
-            .weakPublisher(self)
+            .compactMap(bindable)
             .map(\.attributedText)
             .prepend(attributedText)
             .map { $0 ?? NSAttributedString(string: "") }

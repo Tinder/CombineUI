@@ -24,7 +24,7 @@ extension UIPageControl {
 
     public func currentPagePublisher() -> AnyPublisher<Int, Never> {
         publisher(for: .valueChanged)
-            .weakPublisher(self)
+            .compactMap(bindable)
             .map(\.currentPage)
             .prepend(currentPage)
             .eraseToAnyPublisher()

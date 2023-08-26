@@ -22,7 +22,7 @@ extension UIDatePicker {
 
     public func datePublisher() -> AnyPublisher<Date, Never> {
         publisher(for: .valueChanged)
-            .weakPublisher(self)
+            .compactMap(bindable)
             .map(\.date)
             .prepend(date)
             .eraseToAnyPublisher()
@@ -30,7 +30,7 @@ extension UIDatePicker {
 
     public func countDownDurationPublisher() -> AnyPublisher<TimeInterval, Never> {
         publisher(for: .valueChanged)
-            .weakPublisher(self)
+            .compactMap(bindable)
             .map(\.countDownDuration)
             .prepend(countDownDuration)
             .eraseToAnyPublisher()

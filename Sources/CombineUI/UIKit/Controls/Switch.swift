@@ -24,7 +24,7 @@ extension UISwitch {
 
     public func isOnPublisher() -> AnyPublisher<Bool, Never> {
         publisher(for: .valueChanged)
-            .weakPublisher(self)
+            .compactMap(bindable)
             .map(\.isOn)
             .prepend(isOn)
             .eraseToAnyPublisher()

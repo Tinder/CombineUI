@@ -24,7 +24,7 @@ extension UISlider {
 
     public func valuePublisher() -> AnyPublisher<Float, Never> {
         publisher(for: .valueChanged)
-            .weakPublisher(self)
+            .compactMap(bindable)
             .map(\.value)
             .prepend(value)
             .eraseToAnyPublisher()

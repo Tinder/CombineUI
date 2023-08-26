@@ -24,7 +24,7 @@ extension UIRefreshControl {
 
     public func refreshPublisher() -> AnyPublisher<Void, Never> {
         publisher(for: .valueChanged)
-            .weakPublisher(self)
+            .compactMap(bindable)
             .map(\.isRefreshing)
             .filter { $0 }
             .voidPublisher()

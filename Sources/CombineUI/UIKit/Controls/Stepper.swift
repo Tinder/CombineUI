@@ -24,7 +24,7 @@ extension UIStepper {
 
     public func valuePublisher() -> AnyPublisher<Double, Never> {
         publisher(for: .valueChanged)
-            .weakPublisher(self)
+            .compactMap(bindable)
             .map(\.value)
             .prepend(value)
             .eraseToAnyPublisher()
