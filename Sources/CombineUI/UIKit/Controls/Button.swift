@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@MainActor
 @propertyWrapper
 public struct Button<T: UIButton> {
 
@@ -22,6 +23,7 @@ public struct Button<T: UIButton> {
 
 extension UIButton {
 
+    @MainActor
     public func tapPublisher() -> AnyPublisher<Void, Never> {
         publisher(for: .primaryActionTriggered)
             .voidPublisher()

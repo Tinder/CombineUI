@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@MainActor
 @propertyWrapper
 public struct RefreshControl<T: UIRefreshControl> {
 
@@ -22,6 +23,7 @@ public struct RefreshControl<T: UIRefreshControl> {
 
 extension UIRefreshControl {
 
+    @MainActor
     public func refreshPublisher() -> AnyPublisher<Void, Never> {
         publisher(for: .valueChanged)
             .compactMap(bindable)

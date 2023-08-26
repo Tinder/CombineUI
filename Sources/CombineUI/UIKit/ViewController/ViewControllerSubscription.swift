@@ -10,14 +10,14 @@ internal final class ViewControllerSubscription
     T: UIViewController,
     S: Subscriber
 >
-: Subscription, LifecycleViewControllerDelegate where S.Input == ViewControllerLifecycleEvent,
-                                                      S.Failure == Never {
+: NSObject, Subscription, LifecycleViewControllerDelegate where S.Input == ViewControllerLifecycleEvent,
+                                                                S.Failure == Never {
 
     private var subscriber: S?
 
     private weak var viewController: T?
 
-    private lazy var lifecycleViewController: LifecycleViewController = {
+    @MainActor private lazy var lifecycleViewController: LifecycleViewController = {
         let lifecycleViewController: LifecycleViewController = .init()
         lifecycleViewController.delegate = self
         return lifecycleViewController
@@ -29,6 +29,21 @@ internal final class ViewControllerSubscription
     }
 
     internal func request(_ demand: Subscribers.Demand) {
+        perform(#selector(start), on: .main, with: nil, waitUntilDone: true)
+    }
+
+    internal func cancel() {
+        subscriber = nil
+        perform(#selector(stop), on: .main, with: nil, waitUntilDone: true)
+    }
+
+    internal func lifecycle(_ event: ViewControllerLifecycleEvent) {
+        _ = subscriber?.receive(event)
+    }
+
+    @objc
+    @MainActor
+    private func start() {
         guard subscriber != nil,
               let viewController: T
         else { return }
@@ -37,15 +52,12 @@ internal final class ViewControllerSubscription
         }
     }
 
-    internal func cancel() {
-        subscriber = nil
+    @objc
+    @MainActor
+    private func stop() {
         guard let viewController: T
         else { return }
         viewController.uncontain(lifecycleViewController)
-    }
-
-    internal func lifecycle(_ event: ViewControllerLifecycleEvent) {
-        _ = subscriber?.receive(event)
     }
 
     deinit {

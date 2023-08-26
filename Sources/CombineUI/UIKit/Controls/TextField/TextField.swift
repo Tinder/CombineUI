@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@MainActor
 @propertyWrapper
 public struct TextField<T: UITextField> {
 
@@ -19,6 +20,7 @@ public struct TextField<T: UITextField> {
 
 extension UITextField {
 
+    @MainActor
     public func textPublisher() -> AnyPublisher<String, Never> {
         publisher(for: .allEditingEvents)
             .compactMap(bindable)
@@ -29,6 +31,7 @@ extension UITextField {
             .eraseToAnyPublisher()
     }
 
+    @MainActor
     @available(iOS 15, *)
     public func attributedTextPublisher() -> AnyPublisher<NSAttributedString, Never> {
         publisher(for: .allEditingEvents)

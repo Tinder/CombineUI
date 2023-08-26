@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@MainActor
 public struct DatePickerInterface<T: UIDatePicker> {
 
     public private(set) lazy var date: AnyPublisher<Date, Never> = datePicker

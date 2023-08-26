@@ -4,6 +4,7 @@
 
 import UIKit
 
+@MainActor
 @propertyWrapper
 public struct SearchBar<T: UISearchBar> {
 

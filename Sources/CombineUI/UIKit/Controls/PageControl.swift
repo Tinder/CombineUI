@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@MainActor
 @propertyWrapper
 public struct PageControl<T: UIPageControl> {
 
@@ -22,6 +23,7 @@ public struct PageControl<T: UIPageControl> {
 
 extension UIPageControl {
 
+    @MainActor
     public func currentPagePublisher() -> AnyPublisher<Int, Never> {
         publisher(for: .valueChanged)
             .compactMap(bindable)

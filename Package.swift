@@ -27,6 +27,9 @@ let package = Package(
     targets: [
         .target(
             name: "CombineUI",
+            swiftSettings: [
+                .unsafeFlags(["-strict-concurrency=complete"]),
+            ],
             plugins: [
                 .plugin(name: SwiftLint.plugin),
             ]),

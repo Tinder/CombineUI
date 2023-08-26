@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@MainActor
 public struct SearchBarInterface<T: UISearchBar> {
 
     // MARK: - UISearchBarDelegate

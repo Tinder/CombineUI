@@ -10,8 +10,8 @@ internal final class GestureRecognizerSubscription
     T: UIGestureRecognizer,
     S: Subscriber
 >
-: Subscription where S.Input == T,
-                     S.Failure == Never {
+: NSObject, Subscription where S.Input == T,
+                               S.Failure == Never {
 
     private var subscriber: S?
 
@@ -25,6 +25,24 @@ internal final class GestureRecognizerSubscription
     }
 
     internal func request(_ demand: Subscribers.Demand) {
+        perform(#selector(start), on: .main, with: nil, waitUntilDone: true)
+    }
+
+    internal func cancel() {
+        subscriber = nil
+        perform(#selector(stop), on: .main, with: nil, waitUntilDone: true)
+    }
+
+    @objc
+    internal func action() {
+        guard let gestureRecognizer: T
+        else { return }
+        _ = subscriber?.receive(gestureRecognizer)
+    }
+
+    @objc
+    @MainActor
+    private func start() {
         guard subscriber != nil,
               let gestureRecognizer: T
         else { return }
@@ -35,19 +53,13 @@ internal final class GestureRecognizerSubscription
         }
     }
 
-    internal func cancel() {
-        subscriber = nil
+    @objc
+    @MainActor
+    private func stop() {
         guard let gestureRecognizer: T
         else { return }
         gestureRecognizer.removeTarget(self, action: #selector(action))
         gestureRecognizer.view?.removeGestureRecognizer(gestureRecognizer)
-    }
-
-    @objc
-    internal func action() {
-        guard let gestureRecognizer: T
-        else { return }
-        _ = subscriber?.receive(gestureRecognizer)
     }
 
     deinit {

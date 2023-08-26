@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@MainActor
 @propertyWrapper
 public struct ProgressView<T: UIProgressView> {
 
@@ -22,6 +23,7 @@ public struct ProgressView<T: UIProgressView> {
 
 extension UIProgressView {
 
+    @MainActor
     public func progressPublisher() -> AnyPublisher<Float, Never> {
         publisher(for: \.progress).eraseToAnyPublisher()
     }

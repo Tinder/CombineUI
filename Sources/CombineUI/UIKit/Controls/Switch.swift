@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@MainActor
 @propertyWrapper
 public struct Switch<T: UISwitch> {
 
@@ -22,6 +23,7 @@ public struct Switch<T: UISwitch> {
 
 extension UISwitch {
 
+    @MainActor
     public func isOnPublisher() -> AnyPublisher<Bool, Never> {
         publisher(for: .valueChanged)
             .compactMap(bindable)

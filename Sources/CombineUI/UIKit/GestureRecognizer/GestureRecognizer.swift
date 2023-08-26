@@ -7,6 +7,7 @@ import UIKit
 
 public protocol GestureRecognizable {}
 
+@MainActor
 @propertyWrapper
 public struct GestureRecognizer<T: UIGestureRecognizer> {
 
@@ -21,6 +22,7 @@ public struct GestureRecognizer<T: UIGestureRecognizer> {
 
 extension GestureRecognizable where Self: UIGestureRecognizer {
 
+    @MainActor
     public func publisher(attachingTo view: UIView) -> AnyPublisher<Self, Never> {
         GestureRecognizerPublisher(gestureRecognizer: self, view: view).eraseToAnyPublisher()
     }

@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@MainActor
 public struct TextFieldInterface<T: UITextField> {
 
     public private(set) lazy var text: AnyPublisher<String, Never> = textField

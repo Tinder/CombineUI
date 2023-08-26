@@ -7,6 +7,7 @@ import CombineUI
 import Nimble
 import XCTest
 
+@MainActor
 final class SearchBarTests: XCTestCase {
 
     private final class TestViewController: UIViewController {

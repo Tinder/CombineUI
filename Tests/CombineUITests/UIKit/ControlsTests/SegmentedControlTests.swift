@@ -7,6 +7,7 @@ import CombineUI
 import Nimble
 import XCTest
 
+@MainActor
 final class SegmentedControlTests: XCTestCase {
 
     private final class TestViewController: UIViewController {

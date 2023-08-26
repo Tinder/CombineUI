@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@MainActor
 @propertyWrapper
 public struct Stepper<T: UIStepper> {
 
@@ -22,6 +23,7 @@ public struct Stepper<T: UIStepper> {
 
 extension UIStepper {
 
+    @MainActor
     public func valuePublisher() -> AnyPublisher<Double, Never> {
         publisher(for: .valueChanged)
             .compactMap(bindable)

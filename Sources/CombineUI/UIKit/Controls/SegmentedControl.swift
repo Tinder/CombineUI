@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@MainActor
 @propertyWrapper
 public struct SegmentedControl<T: UISegmentedControl> {
 
@@ -22,6 +23,7 @@ public struct SegmentedControl<T: UISegmentedControl> {
 
 extension UISegmentedControl {
 
+    @MainActor
     public func selectedSegmentIndexPublisher() -> AnyPublisher<Int, Never> {
         publisher(for: .valueChanged)
             .compactMap(bindable)

@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@MainActor
 public struct ViewControllerInterface<T: UIViewController> {
 
     public private(set) lazy var isVisible: AnyPublisher<Bool, Never> = lifecycle

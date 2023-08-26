@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@MainActor
 @propertyWrapper
 public struct DatePicker<T: UIDatePicker> {
 
@@ -20,6 +21,7 @@ public struct DatePicker<T: UIDatePicker> {
 
 extension UIDatePicker {
 
+    @MainActor
     public func datePublisher() -> AnyPublisher<Date, Never> {
         publisher(for: .valueChanged)
             .compactMap(bindable)
@@ -28,6 +30,7 @@ extension UIDatePicker {
             .eraseToAnyPublisher()
     }
 
+    @MainActor
     public func countDownDurationPublisher() -> AnyPublisher<TimeInterval, Never> {
         publisher(for: .valueChanged)
             .compactMap(bindable)

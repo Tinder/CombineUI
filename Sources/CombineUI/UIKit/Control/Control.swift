@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@MainActor
 @propertyWrapper
 public struct Control<T: UIControl> {
 
@@ -19,6 +20,7 @@ public struct Control<T: UIControl> {
 
 extension UIControl {
 
+    @MainActor
     public func publisher(for controlEvents: UIControl.Event) -> AnyPublisher<UIControl.Event, Never> {
         ControlPublisher(control: self, controlEvents: controlEvents).eraseToAnyPublisher()
     }

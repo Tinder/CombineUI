@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@MainActor
 @propertyWrapper
 public struct Slider<T: UISlider> {
 
@@ -22,6 +23,7 @@ public struct Slider<T: UISlider> {
 
 extension UISlider {
 
+    @MainActor
     public func valuePublisher() -> AnyPublisher<Float, Never> {
         publisher(for: .valueChanged)
             .compactMap(bindable)

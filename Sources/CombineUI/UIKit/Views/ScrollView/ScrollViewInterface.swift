@@ -8,6 +8,7 @@ import UIKit
 public typealias ScrollViewWillEndDragging = (velocity: CGPoint, targetContentOffset: CGPoint)
 public typealias ScrollViewDidEndZooming = (view: UIView?, scale: CGFloat)
 
+@MainActor
 public struct ScrollViewInterface<T: UIScrollView> {
 
     // MARK: - UIScrollViewDelegate

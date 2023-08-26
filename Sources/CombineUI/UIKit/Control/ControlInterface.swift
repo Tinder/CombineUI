@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@MainActor
 public struct ControlInterface<T: UIControl> {
 
     public private(set) lazy var touchDown: AnyPublisher<Void, Never> = control
