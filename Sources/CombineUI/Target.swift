@@ -2,9 +2,9 @@
 //  Copyright © 2023 Tinder (Match Group, LLC)
 //
 
-public protocol View: AnyObject {}
+public protocol Target: AnyObject {}
 
-extension View {
+extension Target {
 
     public var bindable: Bindable<Self> {
         Bindable(self)

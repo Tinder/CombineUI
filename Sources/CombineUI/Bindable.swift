@@ -2,11 +2,11 @@
 //  Copyright © 2023 Tinder (Match Group, LLC)
 //
 
-public struct Bindable<View: CombineUI.View> {
+public struct Bindable<Target: CombineUI.Target> {
 
-    internal private(set) weak var view: View?
+    internal private(set) weak var target: Target?
 
-    internal init(_ view: View) {
-        self.view = view
+    internal init(_ target: Target) {
+        self.target = target
     }
 }

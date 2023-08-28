@@ -8,15 +8,15 @@ public struct Binding<Output> {
 
     internal let receiveValue: (Output) -> Void
 
-    public init<T: View>(_ bindable: Bindable<T>, for changes: @escaping (T, Output) -> Void) {
+    public init<T: Target>(_ bindable: Bindable<T>, for changes: @escaping (T, Output) -> Void) {
         receiveValue = { value in
-            guard let view: T = bindable.view
+            guard let target: T = bindable.target
             else { return }
-            changes(view, value)
+            changes(target, value)
         }
     }
 
-    public init<T: View>(_ bindable: Bindable<T>, for keyPath: ReferenceWritableKeyPath<T, Output>) {
+    public init<T: Target>(_ bindable: Bindable<T>, for keyPath: ReferenceWritableKeyPath<T, Output>) {
         self.init(bindable) { $0[keyPath: keyPath] = $1 }
     }
 }

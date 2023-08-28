@@ -10,7 +10,7 @@ extension Publisher {
         map { _ in () }
     }
 
-    internal func compactMap<T: View>(_ bindable: Bindable<T>) -> Publishers.CompactMap<Self, T> {
-        compactMap { _ in bindable.view }
+    internal func compactMap<T: Target>(_ bindable: Bindable<T>) -> Publishers.CompactMap<Self, T> {
+        compactMap { _ in bindable.target }
     }
 }
