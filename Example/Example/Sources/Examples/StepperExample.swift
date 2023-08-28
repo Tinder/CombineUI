@@ -38,6 +38,7 @@ class StepperExample: UIViewController {
             .store(in: &cancellables)
         stepper
             .valuePublisher()
+            .map(Int.init)
             .sink { print(Date(), "stepper.valuePublisher()", "...", $0) }
             .store(in: &cancellables)
     }
