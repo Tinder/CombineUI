@@ -19,6 +19,10 @@ public struct Binding<Output> {
     public init<T: Target>(_ bindable: Bindable<T>, for keyPath: ReferenceWritableKeyPath<T, Output>) {
         self.init(bindable) { $0[keyPath: keyPath] = $1 }
     }
+
+    public init<T: Target>(_ bindable: Bindable<T>, for keyPath: ReferenceWritableKeyPath<T, Output?>) {
+        self.init(bindable) { $0[keyPath: keyPath] = $1 }
+    }
 }
 
 extension Publisher where Failure == Never {
