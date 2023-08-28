@@ -6,3 +6,4 @@
 import UIKit
 
 extension UIView: Target {}
+extension UIGestureRecognizer: Target {}
