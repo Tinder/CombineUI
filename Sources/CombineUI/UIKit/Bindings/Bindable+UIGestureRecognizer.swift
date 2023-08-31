@@ -7,7 +7,7 @@ import UIKit
 
 extension Bindable where Target: UIGestureRecognizer {
 
-    @MainActor public var isEnabled: Binding<Bool> {
+    @preconcurrency @MainActor public var isEnabled: Binding<Bool> {
         Binding(self, for: \.isEnabled)
     }
 }

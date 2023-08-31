@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@preconcurrency
 @MainActor
 @propertyWrapper
 public struct TextField<T: UITextField> {
@@ -20,6 +21,7 @@ public struct TextField<T: UITextField> {
 
 extension UITextField {
 
+    @preconcurrency
     @MainActor
     public func textPublisher() -> AnyPublisher<String, Never> {
         publisher(for: .allEditingEvents)
@@ -31,6 +33,7 @@ extension UITextField {
             .eraseToAnyPublisher()
     }
 
+    @preconcurrency
     @MainActor
     @available(iOS 15, *)
     public func attributedTextPublisher() -> AnyPublisher<NSAttributedString, Never> {

@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@preconcurrency
 @MainActor
 @propertyWrapper
 public struct Button<T: UIButton> {
@@ -23,6 +24,7 @@ public struct Button<T: UIButton> {
 
 extension UIButton {
 
+    @preconcurrency
     @MainActor
     public func tapPublisher() -> AnyPublisher<Void, Never> {
         publisher(for: .primaryActionTriggered)

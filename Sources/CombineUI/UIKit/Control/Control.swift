@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@preconcurrency
 @MainActor
 @propertyWrapper
 public struct Control<T: UIControl> {
@@ -20,6 +21,7 @@ public struct Control<T: UIControl> {
 
 extension UIControl {
 
+    @preconcurrency
     @MainActor
     public func publisher(for controlEvents: UIControl.Event) -> AnyPublisher<UIControl.Event, Never> {
         ControlPublisher(control: self, controlEvents: controlEvents).eraseToAnyPublisher()

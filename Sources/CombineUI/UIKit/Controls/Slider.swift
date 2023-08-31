@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@preconcurrency
 @MainActor
 @propertyWrapper
 public struct Slider<T: UISlider> {
@@ -23,6 +24,7 @@ public struct Slider<T: UISlider> {
 
 extension UISlider {
 
+    @preconcurrency
     @MainActor
     public func valuePublisher() -> AnyPublisher<Float, Never> {
         publisher(for: .valueChanged)

@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@preconcurrency
 @MainActor
 @propertyWrapper
 public struct Switch<T: UISwitch> {
@@ -23,6 +24,7 @@ public struct Switch<T: UISwitch> {
 
 extension UISwitch {
 
+    @preconcurrency
     @MainActor
     public func isOnPublisher() -> AnyPublisher<Bool, Never> {
         publisher(for: .valueChanged)

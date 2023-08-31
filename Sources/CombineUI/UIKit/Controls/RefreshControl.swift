@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@preconcurrency
 @MainActor
 @propertyWrapper
 public struct RefreshControl<T: UIRefreshControl> {
@@ -23,6 +24,7 @@ public struct RefreshControl<T: UIRefreshControl> {
 
 extension UIRefreshControl {
 
+    @preconcurrency
     @MainActor
     public func refreshPublisher() -> AnyPublisher<Void, Never> {
         publisher(for: .valueChanged)

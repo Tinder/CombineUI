@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@preconcurrency
 @MainActor
 @propertyWrapper
 public struct Stepper<T: UIStepper> {
@@ -23,6 +24,7 @@ public struct Stepper<T: UIStepper> {
 
 extension UIStepper {
 
+    @preconcurrency
     @MainActor
     public func valuePublisher() -> AnyPublisher<Double, Never> {
         publisher(for: .valueChanged)

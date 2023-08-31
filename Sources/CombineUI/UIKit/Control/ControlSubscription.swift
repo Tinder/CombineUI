@@ -146,6 +146,7 @@ internal final class ControlSubscription
     }
 
     @objc
+    @preconcurrency
     @MainActor
     private func start() { // swiftlint:disable:this function_body_length cyclomatic_complexity
         guard subscriber != nil,
@@ -202,6 +203,7 @@ internal final class ControlSubscription
     }
 
     @objc
+    @preconcurrency
     @MainActor
     private func stop() { // swiftlint:disable:this cyclomatic_complexity
         guard let control: T

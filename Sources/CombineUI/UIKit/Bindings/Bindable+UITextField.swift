@@ -7,11 +7,11 @@ import UIKit
 
 extension Bindable where Target: UITextField {
 
-    @MainActor public var text: Binding<String> {
+    @preconcurrency @MainActor public var text: Binding<String> {
         Binding(self, for: \.text)
     }
 
-    @MainActor public var attributedText: Binding<NSAttributedString> {
+    @preconcurrency @MainActor public var attributedText: Binding<NSAttributedString> {
         Binding(self, for: \.attributedText)
     }
 }

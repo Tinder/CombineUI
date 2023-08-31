@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@preconcurrency
 @MainActor
 @propertyWrapper
 public struct SegmentedControl<T: UISegmentedControl> {
@@ -23,6 +24,7 @@ public struct SegmentedControl<T: UISegmentedControl> {
 
 extension UISegmentedControl {
 
+    @preconcurrency
     @MainActor
     public func selectedSegmentIndexPublisher() -> AnyPublisher<Int, Never> {
         publisher(for: .valueChanged)

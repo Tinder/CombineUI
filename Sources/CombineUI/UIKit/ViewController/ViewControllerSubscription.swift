@@ -17,7 +17,7 @@ internal final class ViewControllerSubscription
 
     private weak var viewController: T?
 
-    @MainActor private lazy var lifecycleViewController: LifecycleViewController = {
+    @preconcurrency @MainActor private lazy var lifecycleViewController: LifecycleViewController = {
         let lifecycleViewController: LifecycleViewController = .init()
         lifecycleViewController.delegate = self
         return lifecycleViewController
@@ -42,6 +42,7 @@ internal final class ViewControllerSubscription
     }
 
     @objc
+    @preconcurrency
     @MainActor
     private func start() {
         guard subscriber != nil,
@@ -53,6 +54,7 @@ internal final class ViewControllerSubscription
     }
 
     @objc
+    @preconcurrency
     @MainActor
     private func stop() {
         guard let viewController: T

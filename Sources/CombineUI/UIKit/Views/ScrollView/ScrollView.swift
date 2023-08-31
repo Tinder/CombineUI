@@ -4,6 +4,7 @@
 
 import UIKit
 
+@preconcurrency
 @MainActor
 @propertyWrapper
 public struct ScrollView<T: UIScrollView> {

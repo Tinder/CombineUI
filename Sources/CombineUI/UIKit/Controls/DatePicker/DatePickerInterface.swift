@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@preconcurrency
 @MainActor
 public struct DatePickerInterface<T: UIDatePicker> {
 

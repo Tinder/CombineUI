@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@preconcurrency
 @MainActor
 @propertyWrapper
 public struct PageControl<T: UIPageControl> {
@@ -23,6 +24,7 @@ public struct PageControl<T: UIPageControl> {
 
 extension UIPageControl {
 
+    @preconcurrency
     @MainActor
     public func currentPagePublisher() -> AnyPublisher<Int, Never> {
         publisher(for: .valueChanged)

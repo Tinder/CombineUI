@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@preconcurrency
 @MainActor
 @propertyWrapper
 public struct DatePicker<T: UIDatePicker> {
@@ -21,6 +22,7 @@ public struct DatePicker<T: UIDatePicker> {
 
 extension UIDatePicker {
 
+    @preconcurrency
     @MainActor
     public func datePublisher() -> AnyPublisher<Date, Never> {
         publisher(for: .valueChanged)
@@ -30,6 +32,7 @@ extension UIDatePicker {
             .eraseToAnyPublisher()
     }
 
+    @preconcurrency
     @MainActor
     public func countDownDurationPublisher() -> AnyPublisher<TimeInterval, Never> {
         publisher(for: .valueChanged)

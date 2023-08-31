@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@preconcurrency
 @MainActor
 @propertyWrapper
 public struct ProgressView<T: UIProgressView> {
@@ -23,6 +24,7 @@ public struct ProgressView<T: UIProgressView> {
 
 extension UIProgressView {
 
+    @preconcurrency
     @MainActor
     public func progressPublisher() -> AnyPublisher<Float, Never> {
         publisher(for: \.progress).eraseToAnyPublisher()

@@ -41,6 +41,7 @@ internal final class GestureRecognizerSubscription
     }
 
     @objc
+    @preconcurrency
     @MainActor
     private func start() {
         guard subscriber != nil,
@@ -54,6 +55,7 @@ internal final class GestureRecognizerSubscription
     }
 
     @objc
+    @preconcurrency
     @MainActor
     private func stop() {
         guard let gestureRecognizer: T

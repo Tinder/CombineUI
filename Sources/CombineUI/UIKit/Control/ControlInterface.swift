@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@preconcurrency
 @MainActor
 public struct ControlInterface<T: UIControl> {
 
