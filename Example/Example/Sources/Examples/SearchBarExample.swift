@@ -25,10 +25,10 @@ class SearchBarExample: UIViewController {
             view.addSubview(subview)
         }
         NSLayoutConstraint.activate([
-            searchBar.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75),
-            searchBar.heightAnchor.constraint(equalToConstant: 50),
-            searchBar.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            searchBar.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -10)
+            searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            searchBar.heightAnchor.constraint(equalToConstant: 50)
         ])
         $searchBar
             .textDidBeginEditing
