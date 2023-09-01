@@ -48,9 +48,6 @@ class ProgressViewExample: UIViewController {
     }
 
     func simulateProgress() {
-        progressView.setProgress(0.5, animated: true)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak progressView] in
-            progressView?.setProgress(1, animated: true)
-        }
+        progressView.setProgress(1, animated: true)
     }
 }
