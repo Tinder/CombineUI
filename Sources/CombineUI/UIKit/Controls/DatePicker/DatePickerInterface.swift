@@ -9,13 +9,13 @@ import UIKit
 @MainActor
 public struct DatePickerInterface<T: UIDatePicker> {
 
-    public private(set) lazy var date: AnyPublisher<Date, Never> = datePicker
-        .datePublisher()
+    public private(set) lazy var countDownDuration: AnyPublisher<TimeInterval, Never> = datePicker
+        .countDownDurationPublisher()
         .share()
         .eraseToAnyPublisher()
 
-    public private(set) lazy var countDownDuration: AnyPublisher<TimeInterval, Never> = datePicker
-        .countDownDurationPublisher()
+    public private(set) lazy var date: AnyPublisher<Date, Never> = datePicker
+        .datePublisher()
         .share()
         .eraseToAnyPublisher()
 

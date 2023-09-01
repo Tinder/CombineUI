@@ -24,21 +24,21 @@ extension UIDatePicker {
 
     @preconcurrency
     @MainActor
-    public func datePublisher() -> AnyPublisher<Date, Never> {
-        publisher(for: .valueChanged)
-            .compactMap(bindable)
-            .map(\.date)
-            .prepend(date)
-            .eraseToAnyPublisher()
-    }
-
-    @preconcurrency
-    @MainActor
     public func countDownDurationPublisher() -> AnyPublisher<TimeInterval, Never> {
         publisher(for: .valueChanged)
             .compactMap(bindable)
             .map(\.countDownDuration)
             .prepend(countDownDuration)
+            .eraseToAnyPublisher()
+    }
+
+    @preconcurrency
+    @MainActor
+    public func datePublisher() -> AnyPublisher<Date, Never> {
+        publisher(for: .valueChanged)
+            .compactMap(bindable)
+            .map(\.date)
+            .prepend(date)
             .eraseToAnyPublisher()
     }
 }

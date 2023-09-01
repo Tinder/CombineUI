@@ -7,12 +7,12 @@ import UIKit
 
 extension Bindable where Target: UIDatePicker {
 
-    @preconcurrency @MainActor public var date: Binding<Date> {
-        Binding(self, for: \.date)
-    }
-
     @preconcurrency @MainActor public var countDownDuration: Binding<TimeInterval> {
         Binding(self, for: \.countDownDuration)
+    }
+
+    @preconcurrency @MainActor public var date: Binding<Date> {
+        Binding(self, for: \.date)
     }
 
     @preconcurrency
