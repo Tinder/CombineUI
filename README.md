@@ -420,6 +420,7 @@ Extension Methods
   - [UIView](#uiview)
   - [UIViewController](#uiviewcontroller)
 - [Caveats](#caveats)
+- [Customization](#customization)
 
 ## `UIButton`
 
@@ -1420,3 +1421,63 @@ override func viewDidLoad() {
 CombineUI provides publishers for common delegate protocol methods, however due to the nature of publishers, delegate methods that have return values are not available as publishers. Furthermore, the delegate method publishers provided by CombineUI are available as a convenience only. For complex setups, or even when more than just a few delegate methods are required, it is recommended to use an actual delegate class instance.
 
 Note too that setting a delegate property will disable the delegate publisher(s). This means it is not possible to use an actual delegate class instance along with the delegate publishers. Therefore select one pattern or the other for each specific use case.
+
+## Customization
+
+### Adding Bindings to Views and Controls
+
+Additional bindings are easily added to existing views and controls. This is useful for properties that CombineUI does not yet support natively.
+
+Example:
+
+```swift
+extension Bindable where Target: UIView {
+
+    var tag: Binding<Int> {
+        Binding(self, for: \.tag)
+    }
+}
+```
+
+### Adopting CombineUI in Custom Views and Controls
+
+The same type of APIs that CombineUI provides can also be adopted by custom views and controls.
+
+Example:
+
+```swift
+@propertyWrapper
+struct Example<T: ExampleControl> {
+
+    var wrappedValue: T
+    var projectedValue: AnyPublisher<ExampleValue, Never>
+
+    init(wrappedValue: T) {
+        self.wrappedValue = wrappedValue
+        self.projectedValue = wrappedValue
+            .valuePublisher()
+            .share()
+            .eraseToAnyPublisher()
+    }
+}
+
+extension Bindable where Target: ExampleControl {
+
+    var value: Binding<ExampleValue> {
+        Binding(self, for: \.value)
+    }
+}
+
+extension ExampleControl {
+
+    func valuePublisher() -> AnyPublisher<ExampleValue, Never> {
+        publisher(for: .valueChanged)
+            .compactMap { [weak self] _ in self?.value }
+            .prepend(value)
+            .eraseToAnyPublisher()
+    }
+}
+
+```
+
+The CombineUI source code may be used as reference for additional examples.  
