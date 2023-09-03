@@ -1,4 +1,6 @@
 [![Swift](https://github.com/Tinder/CombineUI/actions/workflows/swift.yml/badge.svg?event=push)](https://github.com/Tinder/CombineUI/actions/workflows/swift.yml)
+&nbsp;
+[![Bazel](https://github.com/Tinder/CombineUI/actions/workflows/bazel.yml/badge.svg?event=push)](https://github.com/Tinder/CombineUI/actions/workflows/bazel.yml)
 
 # CombineUI
 
