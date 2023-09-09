@@ -18,7 +18,7 @@ Example:
 @Button var button = UIButton()
 ```
 
-> The `$button` projected value is a publisher that will send when then button is tapped.
+> The `$button` projected value is a publisher that will send when the button is tapped.
 
 And bindings are provided for updating properties of select Apple views with values from Combine publishers.
 
@@ -67,7 +67,7 @@ import Combine
 import CombineUI
 import UIKit
 
-var cancellables: Set<AnyCancellable> = .init()
+var cancellables = Set<AnyCancellable>()
 ```
 
 ### Property Wrapper Example: `UIButton`
@@ -95,7 +95,7 @@ subject
 subject.send("Text")
 ```
 
-### Extension Methods Example: `UIViewController` 
+### Extension Methods Example: `UIViewController`
 
 ```swift
 let viewController = UIViewController()
@@ -1481,7 +1481,6 @@ extension ExampleControl {
             .eraseToAnyPublisher()
     }
 }
-
 ```
 
-The CombineUI source code may be used as reference for additional examples.  
+The CombineUI source code may be used as reference for additional examples.
