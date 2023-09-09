@@ -35,7 +35,6 @@ extension UITextField {
 
     @preconcurrency
     @MainActor
-    @available(iOS 15, *)
     public func attributedTextPublisher() -> AnyPublisher<NSAttributedString, Never> {
         publisher(for: .allEditingEvents)
             .compactMap(bindable)
