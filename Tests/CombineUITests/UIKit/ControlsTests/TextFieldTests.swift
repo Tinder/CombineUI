@@ -52,7 +52,7 @@ final class TextFieldTests: XCTestCase {
     func testText() {
         let viewController: TestViewController = .init()
         let textField: TestTextField = viewController.textField
-        var receivedValues: [String?] = []
+        var receivedValues: [String] = []
         viewController
             .$textField
             .text
@@ -70,7 +70,7 @@ final class TextFieldTests: XCTestCase {
     func testAttributedText() {
         let viewController: TestViewController = .init()
         let textField: TestTextField = viewController.textField
-        var receivedValues: [String?] = []
+        var receivedValues: [String] = []
         viewController
             .$textField
             .attributedText
