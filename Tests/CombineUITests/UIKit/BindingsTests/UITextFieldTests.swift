@@ -18,7 +18,7 @@ final class UITextFieldTests: XCTestCase {
     func testAttributedText() {
         let textField: UITextField = .init()
         expect(textField.attributedText?.string.isEmpty) == true
-        textField.bindable.attributedText.receiveValue(NSAttributedString("Attributed Text"))
+        textField.bindable.attributedText.receiveValue(AttributedString("Attributed Text"))
         expect(textField.attributedText?.string) == "Attributed Text"
     }
 }

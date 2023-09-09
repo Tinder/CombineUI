@@ -163,7 +163,7 @@ Bindings
     <tr></tr>
     <tr>
       <td><code>.attributedTitle(for: UIControl.State)</code></td>
-      <td><code>NSAttributedString</code></td>
+      <td><code>AttributedString</code></td>
     </tr>
     <tr></tr>
     <tr>
@@ -207,7 +207,7 @@ Bindings
     <tr></tr>
     <tr>
       <td><code>.attributedText</code></td>
-      <td><code>NSAttributedString</code></td>
+      <td><code>AttributedString</code></td>
     </tr>
     <tr></tr>
     <tr>
@@ -280,7 +280,7 @@ Bindings
     <tr></tr>
     <tr>
       <td><code>.attributedText</code></td>
-      <td><code>NSAttributedString</code></td>
+      <td><code>AttributedString</code></td>
     </tr>
     <tr></tr>
     <tr>
@@ -386,7 +386,7 @@ Extension Methods
     <tr></tr>
     <tr>
       <td><code>.attributedTextPublisher()</code></td>
-      <td><code>AnyPublisher&lt;NSAttributedString, Never&gt;</code></td>
+      <td><code>AnyPublisher&lt;AttributedString, Never&gt;</code></td>
     </tr>
     <tr></tr>
     <tr>
@@ -442,7 +442,7 @@ Extension Methods
 
 ```swift
 func title(for state: UIControl.State) -> Binding<String>
-func attributedTitle(for state: UIControl.State) -> Binding<NSAttributedString>
+func attributedTitle(for state: UIControl.State) -> Binding<AttributedString>
 ```
 
 ### Extension Method
@@ -470,7 +470,7 @@ Just("Title")
     .bind(to: button.bindable.title(for: .normal))
     .store(in: &cancellables)
 
-Just(NSAttributedString("Title"))
+Just(AttributedString("Title"))
     .bind(to: button.bindable.attributedTitle(for: .normal))
     .store(in: &cancellables)
 
@@ -717,7 +717,7 @@ swipe
 ```swift
 var isEnabled: Binding<Bool>
 var text: Binding<String>
-var attributedText: Binding<NSAttributedString>
+var attributedText: Binding<AttributedString>
 ```
 
 ### Code Example
@@ -1225,7 +1225,7 @@ Just(true)
 // Properties
 
 var text: AnyPublisher<String, Never>
-var attributedText: AnyPublisher<NSAttributedString, Never>
+var attributedText: AnyPublisher<AttributedString, Never>
 
 // UITextFieldDelegate
 
@@ -1238,7 +1238,7 @@ var didChangeSelection: AnyPublisher<Void, Never>
 
 ```swift
 var text: Binding<String>
-var attributedText: Binding<NSAttributedString>
+var attributedText: Binding<AttributedString>
 ```
 
 ### Extension Methods
@@ -1246,7 +1246,7 @@ var attributedText: Binding<NSAttributedString>
 ```swift
 func textPublisher() -> AnyPublisher<String, Never>
 
-func attributedTextPublisher() -> AnyPublisher<NSAttributedString, Never>
+func attributedTextPublisher() -> AnyPublisher<AttributedString, Never>
 ```
 
 ### Code Example
@@ -1277,7 +1277,7 @@ Just("Text")
     .bind(to: textField.bindable.text)
     .store(in: &cancellables)
 
-Just(NSAttributedString("Text"))
+Just(AttributedString("Text"))
     .bind(to: textField.bindable.attributedText)
     .store(in: &cancellables)
 

@@ -11,7 +11,7 @@ extension Bindable where Target: UITextField {
         Binding(self, for: \.text)
     }
 
-    @preconcurrency @MainActor public var attributedText: Binding<NSAttributedString> {
-        Binding(self, for: \.attributedText)
+    @preconcurrency @MainActor public var attributedText: Binding<AttributedString> {
+        Binding(self) { $0.attributedText = NSAttributedString($1) }
     }
 }
