@@ -31,7 +31,7 @@ extension UIRefreshControl {
             .compactMap(bindable)
             .map(\.isRefreshing)
             .filter { $0 }
-            .voidPublisher()
+            .map(to: Void())
             .eraseToAnyPublisher()
     }
 }

@@ -28,7 +28,7 @@ extension UIButton {
     @MainActor
     public func tapPublisher() -> AnyPublisher<Void, Never> {
         publisher(for: .primaryActionTriggered)
-            .voidPublisher()
+            .map(to: Void())
             .eraseToAnyPublisher()
     }
 }

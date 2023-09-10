@@ -11,97 +11,97 @@ public struct ControlInterface<T: UIControl> {
 
     public private(set) lazy var touchDown: AnyPublisher<Void, Never> = control
         .publisher(for: .touchDown)
-        .voidPublisher()
+        .map(to: Void())
         .share()
         .eraseToAnyPublisher()
 
     public private(set) lazy var touchDownRepeat: AnyPublisher<Void, Never> = control
         .publisher(for: .touchDownRepeat)
-        .voidPublisher()
+        .map(to: Void())
         .share()
         .eraseToAnyPublisher()
 
     public private(set) lazy var touchDragInside: AnyPublisher<Void, Never> = control
         .publisher(for: .touchDragInside)
-        .voidPublisher()
+        .map(to: Void())
         .share()
         .eraseToAnyPublisher()
 
     public private(set) lazy var touchDragOutside: AnyPublisher<Void, Never> = control
         .publisher(for: .touchDragOutside)
-        .voidPublisher()
+        .map(to: Void())
         .share()
         .eraseToAnyPublisher()
 
     public private(set) lazy var touchDragEnter: AnyPublisher<Void, Never> = control
         .publisher(for: .touchDragEnter)
-        .voidPublisher()
+        .map(to: Void())
         .share()
         .eraseToAnyPublisher()
 
     public private(set) lazy var touchDragExit: AnyPublisher<Void, Never> = control
         .publisher(for: .touchDragExit)
-        .voidPublisher()
+        .map(to: Void())
         .share()
         .eraseToAnyPublisher()
 
     public private(set) lazy var touchUpInside: AnyPublisher<Void, Never> = control
         .publisher(for: .touchUpInside)
-        .voidPublisher()
+        .map(to: Void())
         .share()
         .eraseToAnyPublisher()
 
     public private(set) lazy var touchUpOutside: AnyPublisher<Void, Never> = control
         .publisher(for: .touchUpOutside)
-        .voidPublisher()
+        .map(to: Void())
         .share()
         .eraseToAnyPublisher()
 
     public private(set) lazy var touchCancel: AnyPublisher<Void, Never> = control
         .publisher(for: .touchCancel)
-        .voidPublisher()
+        .map(to: Void())
         .share()
         .eraseToAnyPublisher()
 
     public private(set) lazy var valueChanged: AnyPublisher<Void, Never> = control
         .publisher(for: .valueChanged)
-        .voidPublisher()
+        .map(to: Void())
         .share()
         .eraseToAnyPublisher()
 
     public private(set) lazy var menuActionTriggered: AnyPublisher<Void, Never> = control
         .publisher(for: .menuActionTriggered)
-        .voidPublisher()
+        .map(to: Void())
         .share()
         .eraseToAnyPublisher()
 
     public private(set) lazy var primaryActionTriggered: AnyPublisher<Void, Never> = control
         .publisher(for: .primaryActionTriggered)
-        .voidPublisher()
+        .map(to: Void())
         .share()
         .eraseToAnyPublisher()
 
     public private(set) lazy var editingDidBegin: AnyPublisher<Void, Never> = control
         .publisher(for: .editingDidBegin)
-        .voidPublisher()
+        .map(to: Void())
         .share()
         .eraseToAnyPublisher()
 
     public private(set) lazy var editingChanged: AnyPublisher<Void, Never> = control
         .publisher(for: .editingChanged)
-        .voidPublisher()
+        .map(to: Void())
         .share()
         .eraseToAnyPublisher()
 
     public private(set) lazy var editingDidEnd: AnyPublisher<Void, Never> = control
         .publisher(for: .editingDidEnd)
-        .voidPublisher()
+        .map(to: Void())
         .share()
         .eraseToAnyPublisher()
 
     public private(set) lazy var editingDidEndOnExit: AnyPublisher<Void, Never> = control
         .publisher(for: .editingDidEndOnExit)
-        .voidPublisher()
+        .map(to: Void())
         .share()
         .eraseToAnyPublisher()
 
