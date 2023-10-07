@@ -15,22 +15,22 @@ public struct ViewControllerInterface<T: UIViewController> {
 
     public private(set) lazy var viewWillAppear: AnyPublisher<Void, Never> = lifecycle
         .filter { $0 == .viewWillAppear }
-        .map(to: Void())
+        .replaceOutput(with: Void())
         .eraseToAnyPublisher()
 
     public private(set) lazy var viewDidAppear: AnyPublisher<Void, Never> = lifecycle
         .filter { $0 == .viewDidAppear }
-        .map(to: Void())
+        .replaceOutput(with: Void())
         .eraseToAnyPublisher()
 
     public private(set) lazy var viewWillDisappear: AnyPublisher<Void, Never> = lifecycle
         .filter { $0 == .viewWillDisappear }
-        .map(to: Void())
+        .replaceOutput(with: Void())
         .eraseToAnyPublisher()
 
     public private(set) lazy var viewDidDisappear: AnyPublisher<Void, Never> = lifecycle
         .filter { $0 == .viewDidDisappear }
-        .map(to: Void())
+        .replaceOutput(with: Void())
         .eraseToAnyPublisher()
 
     private let lifecycle: AnyPublisher<ViewControllerLifecycleEvent, Never>
