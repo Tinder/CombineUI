@@ -9,6 +9,12 @@ import XCTest
 
 final class BindingTests: XCTestCase {
 
+    // swiftlint:disable:next strict_fileprivate
+    fileprivate class TestObject: Target {
+
+        var value: Int = 0
+    }
+
     private var cancellables: Set<AnyCancellable>!
 
     override func setUp() {
@@ -22,22 +28,30 @@ final class BindingTests: XCTestCase {
     }
 
     func testBinding() {
-        let subject: PassthroughSubject<Bool, Never> = .init()
-        var view: UIView? = .init()
-        weak var weakView: UIView? = view
-        expect(weakView) != nil
-        if let view: UIView {
+        let subject: PassthroughSubject<Int, Never> = .init()
+        var object: TestObject? = .init()
+        weak var weakObject: TestObject? = object
+        expect(weakObject) != nil
+        if let object: TestObject {
             subject
-                .bind(to: view.bindable.isHidden)
+                .bind(to: object.bindable.value)
                 .store(in: &cancellables)
         }
-        expect(view?.isHidden) == false
-        subject.send(true)
-        expect(view?.isHidden) == true
-        subject.send(false)
-        expect(view?.isHidden) == false
-        view = nil
-        subject.send(true)
-        expect(weakView) == nil
+        expect(object?.value) == 0
+        subject.send(1)
+        expect(object?.value) == 1
+        subject.send(2)
+        expect(object?.value) == 2
+        object = nil
+        subject.send(3)
+        expect(weakObject) == nil
+    }
+}
+
+extension Bindable where Target: BindingTests.TestObject {
+
+    // swiftlint:disable:next strict_fileprivate
+    fileprivate var value: Binding<Int> {
+        Binding(self, for: \.value)
     }
 }
