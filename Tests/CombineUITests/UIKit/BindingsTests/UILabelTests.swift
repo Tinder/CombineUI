@@ -25,7 +25,7 @@ final class UILabelTests: XCTestCase {
     func testAttributedText() {
         let label: UILabel = .init()
         expect(label.attributedText) == nil
-        label.bindable.attributedText.receiveValue(NSAttributedString("Attributed Text"))
+        label.bindable.attributedText.receiveValue(AttributedString("Attributed Text"))
         expect(label.attributedText?.string) == "Attributed Text"
     }
 }

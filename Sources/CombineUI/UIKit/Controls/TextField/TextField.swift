@@ -35,12 +35,12 @@ extension UITextField {
 
     @preconcurrency
     @MainActor
-    public func attributedTextPublisher() -> AnyPublisher<NSAttributedString, Never> {
+    public func attributedTextPublisher() -> AnyPublisher<AttributedString, Never> {
         publisher(for: .allEditingEvents)
             .compactMap(bindable)
             .map(\.attributedText)
             .prepend(attributedText)
-            .map { $0 ?? NSAttributedString(string: "") }
+            .map { $0.flatMap { AttributedString($0) } ?? AttributedString("") }
             .removeDuplicates()
             .eraseToAnyPublisher()
     }

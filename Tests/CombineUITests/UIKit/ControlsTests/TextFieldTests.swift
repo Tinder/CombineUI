@@ -24,8 +24,8 @@ final class TextFieldTests: XCTestCase {
             targets.values.forEach { $0.editingChanged() }
         }
 
-        func invoke(_ attributedText: NSAttributedString) {
-            self.attributedText = attributedText
+        func invoke(_ attributedText: AttributedString) {
+            self.attributedText = NSAttributedString(attributedText)
             targets.values.forEach { $0.editingChanged() }
         }
 
@@ -73,14 +73,16 @@ final class TextFieldTests: XCTestCase {
         viewController
             .$textField
             .attributedText
-            .map(\.string)
+            .map(\.characters)
+            .map { $0[...] }
+            .map(String.init)
             .sink { receivedValues.append($0) }
             .store(in: &cancellables)
         expect(textField.targets.count) == 1
         expect(receivedValues) == [""]
-        textField.invoke(NSAttributedString("Hello"))
+        textField.invoke(AttributedString("Hello"))
         expect(receivedValues) == ["", "Hello"]
-        textField.invoke(NSAttributedString("World"))
+        textField.invoke(AttributedString("World"))
         expect(receivedValues) == ["", "Hello", "World"]
     }
 

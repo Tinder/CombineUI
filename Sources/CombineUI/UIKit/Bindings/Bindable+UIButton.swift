@@ -15,7 +15,7 @@ extension Bindable where Target: UIButton {
 
     @preconcurrency
     @MainActor
-    public func attributedTitle(for state: UIControl.State) -> Binding<NSAttributedString> {
-        Binding(self) { $0.setAttributedTitle($1, for: state) }
+    public func attributedTitle(for state: UIControl.State) -> Binding<AttributedString> {
+        Binding(self) { $0.setAttributedTitle(NSAttributedString($1), for: state) }
     }
 }

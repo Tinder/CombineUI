@@ -14,7 +14,7 @@ public struct TextFieldInterface<T: UITextField> {
         .share()
         .eraseToAnyPublisher()
 
-    public private(set) lazy var attributedText: AnyPublisher<NSAttributedString, Never> = textField
+    public private(set) lazy var attributedText: AnyPublisher<AttributedString, Never> = textField
         .attributedTextPublisher()
         .share()
         .eraseToAnyPublisher()
