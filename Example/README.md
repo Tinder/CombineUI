@@ -4,13 +4,13 @@
 
 ## Project Setup
 
-### Install dependencies
+### Install Dependencies
 
 ```
 brew install xcodegen
 ```
 
-### Generate Xcode project
+### Generate Xcode Project
 
 ```
 xcodegen
