@@ -14,14 +14,10 @@ public struct TextFieldInterface<T: UITextField> {
         .share()
         .eraseToAnyPublisher()
 
-    public private(set) lazy var attributedText: AnyPublisher<NSAttributedString, Never> = {
-        guard #available(iOS 15, *)
-        else { return Empty(completeImmediately: false).eraseToAnyPublisher() }
-        return textField
-            .attributedTextPublisher()
-            .share()
-            .eraseToAnyPublisher()
-    }()
+    public private(set) lazy var attributedText: AnyPublisher<NSAttributedString, Never> = textField
+        .attributedTextPublisher()
+        .share()
+        .eraseToAnyPublisher()
 
     // MARK: - UITextFieldDelegate
 

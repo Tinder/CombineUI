@@ -1246,7 +1246,6 @@ var attributedText: Binding<NSAttributedString>
 ```swift
 func textPublisher() -> AnyPublisher<String, Never>
 
-@available(iOS 15, *)
 func attributedTextPublisher() -> AnyPublisher<NSAttributedString, Never>
 ```
 

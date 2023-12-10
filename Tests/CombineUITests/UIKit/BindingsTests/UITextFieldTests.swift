@@ -15,7 +15,6 @@ final class UITextFieldTests: XCTestCase {
         expect(textField.text) == "Text"
     }
 
-    @available(iOS 15, *)
     func testAttributedText() {
         let textField: UITextField = .init()
         expect(textField.attributedText?.string.isEmpty) == true

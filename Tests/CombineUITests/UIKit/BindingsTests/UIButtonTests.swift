@@ -15,7 +15,6 @@ final class UIButtonTests: XCTestCase {
         expect(button.title(for: .normal)) == "Title"
     }
 
-    @available(iOS 15, *)
     func testAttributedTitle() {
         let button: UIButton = .init()
         expect(button.attributedTitle(for: .normal)?.string) == nil

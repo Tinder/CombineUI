@@ -12,7 +12,7 @@ enum SwiftLint {
 let package = Package(
     name: packageName,
     platforms: [
-        .iOS(.v14)
+        .iOS(.v15)
     ],
     products: [
         .library(

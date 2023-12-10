@@ -66,7 +66,6 @@ final class TextFieldTests: XCTestCase {
         expect(receivedValues) == ["", "Hello", "World"]
     }
 
-    @available(iOS 15, *)
     func testAttributedText() {
         let viewController: TestViewController = .init()
         let textField: TestTextField = viewController.textField

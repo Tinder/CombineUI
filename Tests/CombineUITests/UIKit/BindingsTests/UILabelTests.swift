@@ -22,7 +22,6 @@ final class UILabelTests: XCTestCase {
         expect(label.text) == "Text"
     }
 
-    @available(iOS 15, *)
     func testAttributedText() {
         let label: UILabel = .init()
         expect(label.attributedText) == nil
