@@ -1,8 +1,16 @@
+load("@build_bazel_rules_apple//apple:ios.bzl", "ios_build_test")
 load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+ios_build_test(
+    name = "CombineUI-iOS",
+    minimum_os_version = "15.0",
+    targets = [":CombineUI"],
+)
 
 swift_library(
     name = "CombineUI",
-    module_name = "CombineUI",
-    srcs = glob(["Sources/CombineUI/**/*.swift"], allow_empty = False),
+    srcs = glob(["Sources/CombineUI/**/*.swift"]),
+    copts = ["-strict-concurrency=complete"],
     visibility = ["//visibility:public"],
+    tags = ["manual"],
 )
