@@ -563,7 +563,7 @@ Just(true)
 
 control
     .publisher(for: .primaryActionTriggered)
-    .sink { print($0.contains(.primaryActionTriggered)) } // true
+    .sink { controlEvents in }
     .store(in: &cancellables)
 ```
 
