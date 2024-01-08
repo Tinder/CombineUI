@@ -7,7 +7,9 @@ import UIKit
 
 extension Bindable where Target: UIProgressView {
 
-    @preconcurrency @MainActor public var progress: Binding<Float> {
+    @preconcurrency
+    @MainActor
+    public var progress: Binding<Float> {
         Binding(self, for: \.progress)
     }
 

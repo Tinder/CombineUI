@@ -7,7 +7,9 @@ import UIKit
 
 extension Bindable where Target: UIControl {
 
-    @preconcurrency @MainActor public var isEnabled: Binding<Bool> {
+    @preconcurrency
+    @MainActor
+    public var isEnabled: Binding<Bool> {
         Binding(self, for: \.isEnabled)
     }
 }

@@ -17,7 +17,9 @@ internal final class ViewControllerSubscription
 
     private weak var viewController: T?
 
-    @preconcurrency @MainActor private lazy var lifecycleViewController: LifecycleViewController = {
+    @preconcurrency
+    @MainActor
+    private lazy var lifecycleViewController: LifecycleViewController = {
         let lifecycleViewController: LifecycleViewController = .init()
         lifecycleViewController.delegate = self
         return lifecycleViewController

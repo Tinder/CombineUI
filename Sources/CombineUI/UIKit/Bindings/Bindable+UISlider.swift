@@ -7,7 +7,9 @@ import UIKit
 
 extension Bindable where Target: UISlider {
 
-    @preconcurrency @MainActor public var value: Binding<Float> {
+    @preconcurrency
+    @MainActor
+    public var value: Binding<Float> {
         Binding(self, for: \.value)
     }
 

@@ -7,7 +7,9 @@ import UIKit
 
 extension Bindable where Target: UISwitch {
 
-    @preconcurrency @MainActor public var isOn: Binding<Bool> {
+    @preconcurrency
+    @MainActor
+    public var isOn: Binding<Bool> {
         Binding(self, for: \.isOn)
     }
 

@@ -7,15 +7,21 @@ import UIKit
 
 extension Bindable where Target: UILabel {
 
-    @preconcurrency @MainActor public var isEnabled: Binding<Bool> {
+    @preconcurrency
+    @MainActor
+    public var isEnabled: Binding<Bool> {
         Binding(self, for: \.isEnabled)
     }
 
-    @preconcurrency @MainActor public var text: Binding<String> {
+    @preconcurrency
+    @MainActor
+    public var text: Binding<String> {
         Binding(self, for: \.text)
     }
 
-    @preconcurrency @MainActor public var attributedText: Binding<AttributedString> {
+    @preconcurrency
+    @MainActor
+    public var attributedText: Binding<AttributedString> {
         Binding(self) { $0.attributedText = NSAttributedString($1) }
     }
 }
