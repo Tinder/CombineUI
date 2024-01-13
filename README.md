@@ -157,417 +157,417 @@ Bindings
   <tbody>
     <tr>
       <td rowspan="11"><code>UIButton</code></td>
-      <td><code>.titleColor(for: UIControl.State)</code></td>
+      <td><code>titleColor(for: UIControl.State)</code></td>
       <td><code>UIColor</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.titleShadowColor(for: UIControl.State)</code></td>
+      <td><code>titleShadowColor(for: UIControl.State)</code></td>
       <td><code>UIColor</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.title(for: UIControl.State)</code></td>
+      <td><code>title(for: UIControl.State)</code></td>
       <td><code>String</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.attributedTitle(for: UIControl.State)</code></td>
+      <td><code>attributedTitle(for: UIControl.State)</code></td>
       <td><code>AttributedString</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.image(for: UIControl.State)</code></td>
+      <td><code>image(for: UIControl.State)</code></td>
       <td><code>UIImage?</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.backgroundImage(for: UIControl.State)</code></td>
+      <td><code>backgroundImage(for: UIControl.State)</code></td>
       <td><code>UIImage?</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td><code>UIControl</code></td>
-      <td><code>.isEnabled</code></td>
+      <td><code>isEnabled</code></td>
       <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td rowspan="5"><code>UIDatePicker</code></td>
-      <td><code>.countDownDuration</code></td>
+      <td><code>countDownDuration</code></td>
       <td><code>TimeInterval</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.date</code></td>
+      <td><code>date</code></td>
       <td><code>Date</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.date(animated: Bool)</code></td>
+      <td><code>date(animated: Bool)</code></td>
       <td><code>Date</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td><code>UIGestureRecognizer</code></td>
-      <td><code>.isEnabled</code></td>
+      <td><code>isEnabled</code></td>
       <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td rowspan="5"><code>UIImageView</code></td>
-      <td><code>.image</code></td>
+      <td><code>image</code></td>
       <td><code>UIImage?</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.highlightedImage</code></td>
+      <td><code>highlightedImage</code></td>
       <td><code>UIImage?</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.isHighlighted</code></td>
+      <td><code>isHighlighted</code></td>
       <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td rowspan="9"><code>UILabel</code></td>
-      <td><code>.isEnabled</code></td>
+      <td><code>isEnabled</code></td>
       <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.font</code></td>
+      <td><code>font</code></td>
       <td><code>UIFont</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.textColor</code></td>
+      <td><code>textColor</code></td>
       <td><code>UIColor</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.text</code></td>
+      <td><code>text</code></td>
       <td><code>String</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.attributedText</code></td>
+      <td><code>attributedText</code></td>
       <td><code>AttributedString</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td rowspan="9"><code>UIPageControl</code></td>
-      <td><code>.pageIndicatorTintColor</code></td>
+      <td><code>pageIndicatorTintColor</code></td>
       <td><code>UIColor</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.currentPageIndicatorTintColor</code></td>
+      <td><code>currentPageIndicatorTintColor</code></td>
       <td><code>UIColor</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.currentPage</code></td>
+      <td><code>currentPage</code></td>
       <td><code>Int</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.numberOfPages</code></td>
+      <td><code>numberOfPages</code></td>
       <td><code>Int</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.hidesForSinglePage</code></td>
+      <td><code>hidesForSinglePage</code></td>
       <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td rowspan="7"><code>UIProgressView</code></td>
-      <td><code>.trackTintColor</code></td>
+      <td><code>trackTintColor</code></td>
       <td><code>UIColor</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.progressTintColor</code></td>
+      <td><code>progressTintColor</code></td>
       <td><code>UIColor</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.progress</code></td>
+      <td><code>progress</code></td>
       <td><code>Float</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.progress(animated: Bool)</code></td>
+      <td><code>progress(animated: Bool)</code></td>
       <td><code>Float</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td rowspan="5"><code>UIRefreshControl</code></td>
-      <td><code>.tintColor</code></td>
+      <td><code>tintColor</code></td>
       <td><code>UIColor</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.attributedTitle</code></td>
+      <td><code>attributedTitle</code></td>
       <td><code>AttributedString</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.isRefreshing</code></td>
+      <td><code>isRefreshing</code></td>
       <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td rowspan="11"><code>UISegmentedControl</code></td>
-      <td><code>.isMomentary</code></td>
+      <td><code>isMomentary</code></td>
       <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.selectedSegmentIndex</code></td>
+      <td><code>selectedSegmentIndex</code></td>
       <td><code>Int</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.isEnabledForSegment(at: Int)</code></td>
+      <td><code>isEnabledForSegment(at: Int)</code></td>
       <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.widthForSegment(at: Int)</code></td>
+      <td><code>widthForSegment(at: Int)</code></td>
       <td><code>CGFloat</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.titleForSegment(at: Int)</code></td>
+      <td><code>titleForSegment(at: Int)</code></td>
       <td><code>String</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.imageForSegment(at: Int)</code></td>
+      <td><code>imageForSegment(at: Int)</code></td>
       <td><code>UIImage?</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td rowspan="15"><code>UISlider</code></td>
-      <td><code>.isContinuous</code></td>
+      <td><code>isContinuous</code></td>
       <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.minimumValue</code></td>
+      <td><code>minimumValue</code></td>
       <td><code>Float</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.maximumValue</code></td>
+      <td><code>maximumValue</code></td>
       <td><code>Float</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.minimumTrackTintColor</code></td>
+      <td><code>minimumTrackTintColor</code></td>
       <td><code>UIColor</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.maximumTrackTintColor</code></td>
+      <td><code>maximumTrackTintColor</code></td>
       <td><code>UIColor</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.thumbTintColor</code></td>
+      <td><code>thumbTintColor</code></td>
       <td><code>UIColor</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.value</code></td>
+      <td><code>value</code></td>
       <td><code>Float</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.value(animated: Bool)</code></td>
+      <td><code>value(animated: Bool)</code></td>
       <td><code>Float</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td rowspan="13"><code>UIStepper</code></td>
-      <td><code>.isContinuous</code></td>
+      <td><code>isContinuous</code></td>
       <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.autorepeat</code></td>
+      <td><code>autorepeat</code></td>
       <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.wraps</code></td>
+      <td><code>wraps</code></td>
       <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.minimumValue</code></td>
+      <td><code>minimumValue</code></td>
       <td><code>Double</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.maximumValue</code></td>
+      <td><code>maximumValue</code></td>
       <td><code>Double</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.stepValue</code></td>
+      <td><code>stepValue</code></td>
       <td><code>Double</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.value</code></td>
+      <td><code>value</code></td>
       <td><code>Double</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td rowspan="7"><code>UISwitch</code></td>
-      <td><code>.onTintColor</code></td>
+      <td><code>onTintColor</code></td>
       <td><code>UIColor</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.thumbTintColor</code></td>
+      <td><code>thumbTintColor</code></td>
       <td><code>UIColor</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.isOn</code></td>
+      <td><code>isOn</code></td>
       <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.isOn(animated: Bool)</code></td>
+      <td><code>isOn(animated: Bool)</code></td>
       <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td rowspan="13"><code>UITextField</code></td>
-      <td><code>.font</code></td>
+      <td><code>font</code></td>
       <td><code>UIFont</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.textColor</code></td>
+      <td><code>textColor</code></td>
       <td><code>UIColor</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.textAlignment</code></td>
+      <td><code>textAlignment</code></td>
       <td><code>NSTextAlignment</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.placeholder</code></td>
+      <td><code>placeholder</code></td>
       <td><code>String</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.attributedPlaceholder</code></td>
+      <td><code>attributedPlaceholder</code></td>
       <td><code>AttributedString</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.text</code></td>
+      <td><code>text</code></td>
       <td><code>String</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.attributedText</code></td>
+      <td><code>attributedText</code></td>
       <td><code>AttributedString</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td rowspan="11"><code>UITextView</code></td>
-      <td><code>.isEditable</code></td>
+      <td><code>isEditable</code></td>
       <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.font</code></td>
+      <td><code>font</code></td>
       <td><code>UIFont</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.textColor</code></td>
+      <td><code>textColor</code></td>
       <td><code>UIColor</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.textAlignment</code></td>
+      <td><code>textAlignment</code></td>
       <td><code>NSTextAlignment</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.text</code></td>
+      <td><code>text</code></td>
       <td><code>String</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.attributedText</code></td>
+      <td><code>attributedText</code></td>
       <td><code>AttributedString</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td rowspan="21"><code>UIView</code></td>
-      <td><code>.isUserInteractionEnabled</code></td>
+      <td><code>isUserInteractionEnabled</code></td>
       <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.isMultipleTouchEnabled</code></td>
+      <td><code>isMultipleTouchEnabled</code></td>
       <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.isExclusiveTouch</code></td>
+      <td><code>isExclusiveTouch</code></td>
       <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.clipsToBounds</code></td>
+      <td><code>clipsToBounds</code></td>
       <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.tintColor</code></td>
+      <td><code>tintColor</code></td>
       <td><code>UIColor</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.backgroundColor</code></td>
+      <td><code>backgroundColor</code></td>
       <td><code>UIColor</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.borderColor</code></td>
+      <td><code>borderColor</code></td>
       <td><code>UIColor</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.shadowColor</code></td>
+      <td><code>shadowColor</code></td>
       <td><code>UIColor</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.alpha</code></td>
+      <td><code>alpha</code></td>
       <td><code>CGFloat</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.isOpaque</code></td>
+      <td><code>isOpaque</code></td>
       <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.isHidden</code></td>
+      <td><code>isHidden</code></td>
       <td><code>Bool</code></td>
     </tr>
   </tbody>
@@ -586,95 +586,95 @@ Extension Methods
   <tbody>
     <tr>
       <td><code>UIButton</code></td>
-      <td><code>.tapPublisher()</code></td>
+      <td><code>tapPublisher()</code></td>
       <td><code>AnyPublisher&lt;Void, Never&gt;</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td><code>UIControl</code></td>
-      <td><code>.publisher(for: UIControl.Event)</code></td>
+      <td><code>publisher(for: UIControl.Event)</code></td>
       <td><code>AnyPublisher&lt;UIControl.Event, Never&gt;</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td rowspan="3"><code>UIDatePicker</code></td>
-      <td><code>.countDownDurationPublisher()</code></td>
+      <td><code>countDownDurationPublisher()</code></td>
       <td><code>AnyPublisher&lt;TimeInterval, Never&gt;</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.datePublisher()</code></td>
+      <td><code>datePublisher()</code></td>
       <td><code>AnyPublisher&lt;Date, Never&gt;</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td><code>UIGestureRecognizer</code></td>
-      <td><code>.publisher(attachingTo: UIView)</code></td>
+      <td><code>publisher(attachingTo: UIView)</code></td>
       <td><code>AnyPublisher&lt;UIGestureRecognizer, Never&gt;</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td><code>UIPageControl</code></td>
-      <td><code>.currentPagePublisher()</code></td>
+      <td><code>currentPagePublisher()</code></td>
       <td><code>AnyPublisher&lt;Int, Never&gt;</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td><code>UIProgressView</code></td>
-      <td><code>.progressPublisher()</code></td>
+      <td><code>progressPublisher()</code></td>
       <td><code>AnyPublisher&lt;Float, Never&gt;</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td><code>UIRefreshControl</code></td>
-      <td><code>.refreshPublisher()</code></td>
+      <td><code>refreshPublisher()</code></td>
       <td><code>AnyPublisher&lt;Void, Never&gt;</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td><code>UISegmentedControl</code></td>
-      <td><code>.selectedSegmentIndexPublisher()</code></td>
+      <td><code>selectedSegmentIndexPublisher()</code></td>
       <td><code>AnyPublisher&lt;Int, Never&gt;</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td><code>UISlider</code></td>
-      <td><code>.valuePublisher()</code></td>
+      <td><code>valuePublisher()</code></td>
       <td><code>AnyPublisher&lt;Float, Never&gt;</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td><code>UIStepper</code></td>
-      <td><code>.valuePublisher()</code></td>
+      <td><code>valuePublisher()</code></td>
       <td><code>AnyPublisher&lt;Double, Never&gt;</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td><code>UISwitch</code></td>
-      <td><code>.isOnPublisher()</code></td>
+      <td><code>isOnPublisher()</code></td>
       <td><code>AnyPublisher&lt;Bool, Never&gt;</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td rowspan="3"><code>UITextField</code></td>
-      <td><code>.textPublisher()</code></td>
+      <td><code>textPublisher()</code></td>
       <td><code>AnyPublisher&lt;String, Never&gt;</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td><code>.attributedTextPublisher()</code></td>
+      <td><code>attributedTextPublisher()</code></td>
       <td><code>AnyPublisher&lt;AttributedString, Never&gt;</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td><code>UIViewController</code></td>
-      <td><code>.lifecyclePublisher()</code></td>
+      <td><code>lifecyclePublisher()</code></td>
       <td><code>AnyPublisher&lt;ViewControllerLifecycleEvent, Never&gt;</code></td>
     </tr>
     <tr></tr>
     <tr>
       <td><code>Publisher where Output == ViewControllerLifecycleEvent</code></td>
-      <td><code>.isVisiblePublisher()</code></td>
+      <td><code>isVisiblePublisher()</code></td>
       <td><code>AnyPublisher&lt;Bool, Never&gt;</code></td>
     </tr>
   </tbody>
