@@ -148,15 +148,25 @@ Bindings
 
 <table>
   <thead>
-      <tr>
-        <th align="left"></th>
-        <th align="left">Binding</th>
-        <th align="left">Type</th>
+    <tr>
+      <th align="left"></th>
+      <th align="left">Binding</th>
+      <th align="left">Type</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td rowspan="3"><code>UIButton</code></td>
+      <td rowspan="11"><code>UIButton</code></td>
+      <td><code>.titleColor(for: UIControl.State)</code></td>
+      <td><code>UIColor</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.titleShadowColor(for: UIControl.State)</code></td>
+      <td><code>UIColor</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
       <td><code>.title(for: UIControl.State)</code></td>
       <td><code>String</code></td>
     </tr>
@@ -164,6 +174,16 @@ Bindings
     <tr>
       <td><code>.attributedTitle(for: UIControl.State)</code></td>
       <td><code>AttributedString</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.image(for: UIControl.State)</code></td>
+      <td><code>UIImage?</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.backgroundImage(for: UIControl.State)</code></td>
+      <td><code>UIImage?</code></td>
     </tr>
     <tr></tr>
     <tr>
@@ -195,9 +215,35 @@ Bindings
     </tr>
     <tr></tr>
     <tr>
-      <td rowspan="5"><code>UILabel</code></td>
+      <td rowspan="5"><code>UIImageView</code></td>
+      <td><code>.image</code></td>
+      <td><code>UIImage?</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.highlightedImage</code></td>
+      <td><code>UIImage?</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.isHighlighted</code></td>
+      <td><code>Bool</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td rowspan="9"><code>UILabel</code></td>
       <td><code>.isEnabled</code></td>
       <td><code>Bool</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.font</code></td>
+      <td><code>UIFont</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.textColor</code></td>
+      <td><code>UIColor</code></td>
     </tr>
     <tr></tr>
     <tr>
@@ -211,13 +257,43 @@ Bindings
     </tr>
     <tr></tr>
     <tr>
-      <td><code>UIPageControl</code></td>
+      <td rowspan="9"><code>UIPageControl</code></td>
+      <td><code>.pageIndicatorTintColor</code></td>
+      <td><code>UIColor</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.currentPageIndicatorTintColor</code></td>
+      <td><code>UIColor</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
       <td><code>.currentPage</code></td>
       <td><code>Int</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td rowspan="3"><code>UIProgressView</code></td>
+      <td><code>.numberOfPages</code></td>
+      <td><code>Int</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.hidesForSinglePage</code></td>
+      <td><code>Bool</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td rowspan="7"><code>UIProgressView</code></td>
+      <td><code>.trackTintColor</code></td>
+      <td><code>UIColor</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.progressTintColor</code></td>
+      <td><code>UIColor</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
       <td><code>.progress</code></td>
       <td><code>Float</code></td>
     </tr>
@@ -228,13 +304,28 @@ Bindings
     </tr>
     <tr></tr>
     <tr>
-      <td><code>UIRefreshControl</code></td>
+      <td rowspan="5"><code>UIRefreshControl</code></td>
+      <td><code>.tintColor</code></td>
+      <td><code>UIColor</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.attributedTitle</code></td>
+      <td><code>AttributedString</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
       <td><code>.isRefreshing</code></td>
       <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td rowspan="3"><code>UISegmentedControl</code></td>
+      <td rowspan="11"><code>UISegmentedControl</code></td>
+      <td><code>.isMomentary</code></td>
+      <td><code>Bool</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
       <td><code>.selectedSegmentIndex</code></td>
       <td><code>Int</code></td>
     </tr>
@@ -245,7 +336,52 @@ Bindings
     </tr>
     <tr></tr>
     <tr>
-      <td rowspan="3"><code>UISlider</code></td>
+      <td><code>.widthForSegment(at: Int)</code></td>
+      <td><code>CGFloat</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.titleForSegment(at: Int)</code></td>
+      <td><code>String</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.imageForSegment(at: Int)</code></td>
+      <td><code>UIImage?</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td rowspan="15"><code>UISlider</code></td>
+      <td><code>.isContinuous</code></td>
+      <td><code>Bool</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.minimumValue</code></td>
+      <td><code>Float</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.maximumValue</code></td>
+      <td><code>Float</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.minimumTrackTintColor</code></td>
+      <td><code>UIColor</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.maximumTrackTintColor</code></td>
+      <td><code>UIColor</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.thumbTintColor</code></td>
+      <td><code>UIColor</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
       <td><code>.value</code></td>
       <td><code>Float</code></td>
     </tr>
@@ -256,13 +392,53 @@ Bindings
     </tr>
     <tr></tr>
     <tr>
-      <td><code>UIStepper</code></td>
+      <td rowspan="13"><code>UIStepper</code></td>
+      <td><code>.isContinuous</code></td>
+      <td><code>Bool</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.autorepeat</code></td>
+      <td><code>Bool</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.wraps</code></td>
+      <td><code>Bool</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.minimumValue</code></td>
+      <td><code>Double</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.maximumValue</code></td>
+      <td><code>Double</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.stepValue</code></td>
+      <td><code>Double</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
       <td><code>.value</code></td>
       <td><code>Double</code></td>
     </tr>
     <tr></tr>
     <tr>
-      <td rowspan="3"><code>UISwitch</code></td>
+      <td rowspan="7"><code>UISwitch</code></td>
+      <td><code>.onTintColor</code></td>
+      <td><code>UIColor</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.thumbTintColor</code></td>
+      <td><code>UIColor</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
       <td><code>.isOn</code></td>
       <td><code>Bool</code></td>
     </tr>
@@ -273,7 +449,32 @@ Bindings
     </tr>
     <tr></tr>
     <tr>
-      <td rowspan="3"><code>UITextField</code></td>
+      <td rowspan="13"><code>UITextField</code></td>
+      <td><code>.font</code></td>
+      <td><code>UIFont</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.textColor</code></td>
+      <td><code>UIColor</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.textAlignment</code></td>
+      <td><code>NSTextAlignment</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.placeholder</code></td>
+      <td><code>String</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.attributedPlaceholder</code></td>
+      <td><code>AttributedString</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
       <td><code>.text</code></td>
       <td><code>String</code></td>
     </tr>
@@ -284,9 +485,85 @@ Bindings
     </tr>
     <tr></tr>
     <tr>
-      <td rowspan="3"><code>UIView</code></td>
+      <td rowspan="11"><code>UITextView</code></td>
+      <td><code>.isEditable</code></td>
+      <td><code>Bool</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.font</code></td>
+      <td><code>UIFont</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.textColor</code></td>
+      <td><code>UIColor</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.textAlignment</code></td>
+      <td><code>NSTextAlignment</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.text</code></td>
+      <td><code>String</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.attributedText</code></td>
+      <td><code>AttributedString</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td rowspan="21"><code>UIView</code></td>
+      <td><code>.isUserInteractionEnabled</code></td>
+      <td><code>Bool</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.isMultipleTouchEnabled</code></td>
+      <td><code>Bool</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.isExclusiveTouch</code></td>
+      <td><code>Bool</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.clipsToBounds</code></td>
+      <td><code>Bool</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.tintColor</code></td>
+      <td><code>UIColor</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.backgroundColor</code></td>
+      <td><code>UIColor</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.borderColor</code></td>
+      <td><code>UIColor</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.shadowColor</code></td>
+      <td><code>UIColor</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
       <td><code>.alpha</code></td>
       <td><code>CGFloat</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>.isOpaque</code></td>
+      <td><code>Bool</code></td>
     </tr>
     <tr></tr>
     <tr>
@@ -410,6 +687,7 @@ Extension Methods
   - [UIControl](#uicontrol)
   - [UIDatePicker](#uidatepicker)
   - [UIGestureRecognizer](#uigesturerecognizer)
+  - [UIImageView](#uiimageview)
   - [UILabel](#uilabel)
   - [UIPageControl](#uipagecontrol)
   - [UIProgressView](#uiprogressview)
@@ -421,6 +699,7 @@ Extension Methods
   - [UIStepper](#uistepper)
   - [UISwitch](#uiswitch)
   - [UITextField](#uitextfield)
+  - [UITextView](#uitextview)
   - [UIView](#uiview)
   - [UIViewController](#uiviewcontroller)
 - [Caveats](#caveats)
@@ -441,8 +720,12 @@ Extension Methods
 ### Bindings
 
 ```swift
+func titleColor(for state: UIControl.State) -> Binding<UIColor>
+func titleShadowColor(for state: UIControl.State) -> Binding<UIColor>
 func title(for state: UIControl.State) -> Binding<String>
 func attributedTitle(for state: UIControl.State) -> Binding<AttributedString>
+func image(for state: UIControl.State) -> Binding<UIImage?>
+func backgroundImage(for state: UIControl.State) -> Binding<UIImage?>
 ```
 
 ### Extension Method
@@ -466,12 +749,28 @@ $button
 
 // Bindings
 
+Just(.systemPink)
+    .bind(to: button.bindable.titleColor(for: .normal))
+    .store(in: &cancellables)
+
+Just(.systemPink)
+    .bind(to: button.bindable.titleShadowColor(for: .normal))
+    .store(in: &cancellables)
+
 Just("Title")
     .bind(to: button.bindable.title(for: .normal))
     .store(in: &cancellables)
 
 Just(AttributedString("Title"))
     .bind(to: button.bindable.attributedTitle(for: .normal))
+    .store(in: &cancellables)
+
+Just(.checkmark)
+    .bind(to: button.bindable.image(for: .normal))
+    .store(in: &cancellables)
+
+Just(.checkmark)
+    .bind(to: button.bindable.backgroundImage(for: .normal))
     .store(in: &cancellables)
 
 // Extension Method
@@ -710,12 +1009,42 @@ swipe
 
 - The gesture recognizer will be added to the provided view automatically.
 
+## `UIImageView`
+
+### Bindings
+
+```swift
+var image: Binding<UIImage?>
+var highlightedImage: Binding<UIImage?>
+var isHighlighted: Binding<Bool>
+```
+
+### Code Example
+
+```swift
+let imageView = UIImageView()
+
+Just(.checkmark)
+    .bind(to: imageView.bindable.image)
+    .store(in: &cancellables)
+
+Just(.checkmark)
+    .bind(to: imageView.bindable.highlightedImage)
+    .store(in: &cancellables)
+
+Just(true)
+    .bind(to: imageView.bindable.isHighlighted)
+    .store(in: &cancellables)
+```
+
 ## `UILabel`
 
 ### Bindings
 
 ```swift
 var isEnabled: Binding<Bool>
+var font: Binding<UIFont>
+var textColor: Binding<UIColor>
 var text: Binding<String>
 var attributedText: Binding<AttributedString>
 ```
@@ -723,19 +1052,25 @@ var attributedText: Binding<AttributedString>
 ### Code Example
 
 ```swift
-// Bindings
-
 let label = UILabel()
 
 Just(true)
     .bind(to: label.bindable.isEnabled)
     .store(in: &cancellables)
 
+Just(.preferredFont(forTextStyle: .body))
+    .bind(to: label.bindable.font)
+    .store(in: &cancellables)
+
+Just(.systemPink)
+    .bind(to: label.bindable.textColor)
+    .store(in: &cancellables)
+
 Just("Text")
     .bind(to: label.bindable.text)
     .store(in: &cancellables)
 
-Just("Attributed Text")
+Just(AttributedString("Text"))
     .bind(to: label.bindable.attributedText)
     .store(in: &cancellables)
 ```
@@ -752,10 +1087,14 @@ Just("Attributed Text")
 @PageControl // Projected Value: AnyPublisher<Int, Never>
 ```
 
-### Binding
+### Bindings
 
 ```swift
+var pageIndicatorTintColor: Binding<UIColor>
+var currentPageIndicatorTintColor: Binding<UIColor>
 var currentPage: Binding<Int>
+var numberOfPages: Binding<Int>
+var hidesForSinglePage: Binding<Bool>
 ```
 
 ### Extension Method
@@ -775,10 +1114,26 @@ $pageControl
     .sink { currentPage in }
     .store(in: &cancellables)
 
-// Binding
+// Bindings
+
+Just(.systemPink)
+    .bind(to: pageControl.bindable.pageIndicatorTintColor)
+    .store(in: &cancellables)
+
+Just(.systemPink)
+    .bind(to: pageControl.bindable.currentPageIndicatorTintColor)
+    .store(in: &cancellables)
 
 Just(1)
     .bind(to: pageControl.bindable.currentPage)
+    .store(in: &cancellables)
+
+Just(1)
+    .bind(to: pageControl.bindable.numberOfPages)
+    .store(in: &cancellables)
+
+Just(true)
+    .bind(to: pageControl.bindable.hidesForSinglePage)
     .store(in: &cancellables)
 
 // Extension Method
@@ -804,6 +1159,8 @@ pageControl
 ### Bindings
 
 ```swift
+var trackTintColor: Binding<UIColor>
+var progressTintColor: Binding<UIColor>
 var progress: Binding<Float>
 
 func progress(animated: Bool) -> Binding<Float>
@@ -827,6 +1184,14 @@ $progressView
     .store(in: &cancellables)
 
 // Bindings
+
+Just(.systemPink)
+    .bind(to: progressView.bindable.trackTintColor)
+    .store(in: &cancellables)
+
+Just(.systemPink)
+    .bind(to: progressView.bindable.progressTintColor)
+    .store(in: &cancellables)
 
 Just(1)
     .bind(to: progressView.bindable.progress)
@@ -871,9 +1236,11 @@ class ProgressView: UIProgressView {
 @RefreshControl // Projected Value: AnyPublisher<Void, Never>
 ```
 
-### Binding
+### Bindings
 
 ```swift
+var tintColor: Binding<UIColor>
+var attributedTitle: Binding<AttributedString>
 var isRefreshing: Binding<Bool>
 ```
 
@@ -894,7 +1261,15 @@ $refreshControl
     .sink { print("Refreshing") }
     .store(in: &cancellables)
 
-// Binding
+// Bindings
+
+Just(.systemPink)
+    .bind(to: refreshControl.bindable.tintColor)
+    .store(in: &cancellables)
+
+Just(AttributedString("Title"))
+    .bind(to: refreshControl.bindable.attributedTitle)
+    .store(in: &cancellables)
 
 Just(true)
     .bind(to: refreshControl.bindable.isRefreshing)
@@ -940,8 +1315,6 @@ var didChangeAdjustedContentInset: AnyPublisher<Void, Never>
 ### Code Example
 
 ```swift
-// Property Wrapper
-
 @ScrollView var scrollView = UIScrollView()
 
 $scrollView
@@ -978,8 +1351,6 @@ var selectedScopeButtonIndexDidChange: AnyPublisher<Int, Never>
 ### Code Example
 
 ```swift
-// Property Wrapper
-
 @SearchBar var searchBar = UISearchBar()
 
 $searchBar
@@ -1003,9 +1374,13 @@ $searchBar
 ### Bindings
 
 ```swift
+var isMomentary: Binding<Bool>
 var selectedSegmentIndex: Binding<Int>
 
 func isEnabledForSegment(at index: Int) -> Binding<Bool>
+func widthForSegment(at index: Int) -> Binding<CGFloat>
+func titleForSegment(at index: Int) -> Binding<String>
+func imageForSegment(at index: Int) -> Binding<UIImage?>
 ```
 
 ### Extension Method
@@ -1027,12 +1402,28 @@ $segmentedControl
 
 // Bindings
 
+Just(true)
+    .bind(to: segmentedControl.bindable.isMomentary)
+    .store(in: &cancellables)
+
 Just(1)
     .bind(to: segmentedControl.bindable.selectedSegmentIndex)
     .store(in: &cancellables)
 
 Just(true)
     .bind(to: segmentedControl.bindable.isEnabledForSegment(at: 1))
+    .store(in: &cancellables)
+
+Just(100)
+    .bind(to: segmentedControl.bindable.widthForSegment(at: 1))
+    .store(in: &cancellables)
+
+Just("Title")
+    .bind(to: segmentedControl.bindable.titleForSegment(at: 1))
+    .store(in: &cancellables)
+
+Just(.checkmark)
+    .bind(to: segmentedControl.bindable.imageForSegment(at: 1))
     .store(in: &cancellables)
 
 // Extension Method
@@ -1058,6 +1449,12 @@ segmentedControl
 ### Bindings
 
 ```swift
+var isContinuous: Binding<Bool>
+var minimumValue: Binding<Float>
+var maximumValue: Binding<Float>
+var minimumTrackTintColor: Binding<UIColor>
+var maximumTrackTintColor: Binding<UIColor>
+var thumbTintColor: Binding<UIColor>
 var value: Binding<Float>
 
 func value(animated: Bool) -> Binding<Float>
@@ -1081,6 +1478,30 @@ $slider
     .store(in: &cancellables)
 
 // Bindings
+
+Just(true)
+    .bind(to: slider.bindable.isContinuous)
+    .store(in: &cancellables)
+
+Just(1)
+    .bind(to: slider.bindable.minimumValue)
+    .store(in: &cancellables)
+
+Just(100)
+    .bind(to: slider.bindable.maximumValue)
+    .store(in: &cancellables)
+
+Just(.systemPink)
+    .bind(to: slider.bindable.minimumTrackTintColor)
+    .store(in: &cancellables)
+
+Just(.systemPink)
+    .bind(to: slider.bindable.maximumTrackTintColor)
+    .store(in: &cancellables)
+
+Just(.systemPink)
+    .bind(to: slider.bindable.thumbTintColor)
+    .store(in: &cancellables)
 
 Just(1)
     .bind(to: slider.bindable.value)
@@ -1110,9 +1531,15 @@ slider
 @Stepper // Projected Value: AnyPublisher<Double, Never>
 ```
 
-### Binding
+### Bindings
 
 ```swift
+var isContinuous: Binding<Bool>
+var autorepeat: Binding<Bool>
+var wraps: Binding<Bool>
+var minimumValue: Binding<Double>
+var maximumValue: Binding<Double>
+var stepValue: Binding<Double>
 var value: Binding<Double>
 ```
 
@@ -1133,7 +1560,31 @@ $stepper
     .sink { value in }
     .store(in: &cancellables)
 
-// Binding
+// Bindings
+
+Just(true)
+    .bind(to: stepper.bindable.isContinuous)
+    .store(in: &cancellables)
+
+Just(true)
+    .bind(to: stepper.bindable.autorepeat)
+    .store(in: &cancellables)
+
+Just(true)
+    .bind(to: stepper.bindable.wraps)
+    .store(in: &cancellables)
+
+Just(1)
+    .bind(to: stepper.bindable.minimumValue)
+    .store(in: &cancellables)
+
+Just(100)
+    .bind(to: stepper.bindable.maximumValue)
+    .store(in: &cancellables)
+
+Just(10)
+    .bind(to: stepper.bindable.stepValue)
+    .store(in: &cancellables)
 
 Just(100)
     .bind(to: stepper.bindable.value)
@@ -1162,6 +1613,8 @@ stepper
 ### Bindings
 
 ```swift
+var onTintColor: Binding<UIColor>
+var thumbTintColor: Binding<UIColor>
 var isOn: Binding<Bool>
 
 func isOn(animated: Bool) -> Binding<Bool>
@@ -1185,6 +1638,14 @@ $switch
     .store(in: &cancellables)
 
 // Bindings
+
+Just(.systemPink)
+    .bind(to: `switch`.bindable.onTintColor)
+    .store(in: &cancellables)
+
+Just(.systemPink)
+    .bind(to: `switch`.bindable.thumbTintColor)
+    .store(in: &cancellables)
 
 Just(true)
     .bind(to: `switch`.bindable.isOn)
@@ -1237,6 +1698,11 @@ var didChangeSelection: AnyPublisher<Void, Never>
 ### Bindings
 
 ```swift
+var font: Binding<UIFont>
+var textColor: Binding<UIColor>
+var textAlignment: Binding<NSTextAlignment>
+var placeholder: Binding<String>
+var attributedPlaceholder: Binding<AttributedString>
 var text: Binding<String>
 var attributedText: Binding<AttributedString>
 ```
@@ -1245,7 +1711,6 @@ var attributedText: Binding<AttributedString>
 
 ```swift
 func textPublisher() -> AnyPublisher<String, Never>
-
 func attributedTextPublisher() -> AnyPublisher<AttributedString, Never>
 ```
 
@@ -1273,6 +1738,26 @@ $textField
 
 // Bindings
 
+Just(.preferredFont(forTextStyle: .body))
+    .bind(to: textField.bindable.font)
+    .store(in: &cancellables)
+
+Just(.systemPink)
+    .bind(to: textField.bindable.textColor)
+    .store(in: &cancellables)
+
+Just(.natural)
+    .bind(to: textField.bindable.textAlignment)
+    .store(in: &cancellables)
+
+Just("Placeholder")
+    .bind(to: textField.bindable.placeholder)
+    .store(in: &cancellables)
+
+Just(AttributedString("Placeholder"))
+    .bind(to: textField.bindable.attributedPlaceholder)
+    .store(in: &cancellables)
+
 Just("Text")
     .bind(to: textField.bindable.text)
     .store(in: &cancellables)
@@ -1294,12 +1779,64 @@ textField
     .store(in: &cancellables)
 ```
 
+## `UITextView`
+
+### Bindings
+
+```swift
+var isEditable: Binding<Bool>
+var font: Binding<UIFont>
+var textColor: Binding<UIColor>
+var textAlignment: Binding<NSTextAlignment>
+var text: Binding<String>
+var attributedText: Binding<AttributedString>
+```
+
+### Code Example
+
+```swift
+let textView = UITextView()
+
+Just(true)
+    .bind(to: textView.bindable.isEditable)
+    .store(in: &cancellables)
+
+Just(.preferredFont(forTextStyle: .body))
+    .bind(to: textView.bindable.font)
+    .store(in: &cancellables)
+
+Just(.systemPink)
+    .bind(to: textView.bindable.textColor)
+    .store(in: &cancellables)
+
+Just(.natural)
+    .bind(to: textView.bindable.textAlignment)
+    .store(in: &cancellables)
+
+Just("Text")
+    .bind(to: textView.bindable.text)
+    .store(in: &cancellables)
+
+Just(AttributedString("Text"))
+    .bind(to: textView.bindable.attributedText)
+    .store(in: &cancellables)
+```
+
 ## `UIView`
 
 ### Bindings
 
 ```swift
+var isUserInteractionEnabled: Binding<Bool>
+var isMultipleTouchEnabled: Binding<Bool>
+var isExclusiveTouch: Binding<Bool>
+var clipsToBounds: Binding<Bool>
+var tintColor: Binding<UIColor>
+var backgroundColor: Binding<UIColor>
+var borderColor: Binding<UIColor>
+var shadowColor: Binding<UIColor>
 var alpha: Binding<CGFloat>
+var isOpaque: Binding<Bool>
 var isHidden: Binding<Bool>
 ```
 
@@ -1310,12 +1847,46 @@ Just as every CombineUI binding may be used with subclasses of its supported typ
 ### Code Example
 
 ```swift
-// Bindings
-
 let view = UIView()
+
+Just(true)
+    .bind(to: view.bindable.isUserInteractionEnabled)
+    .store(in: &cancellables)
+
+Just(true)
+    .bind(to: view.bindable.isMultipleTouchEnabled)
+    .store(in: &cancellables)
+
+Just(true)
+    .bind(to: view.bindable.isExclusiveTouch)
+    .store(in: &cancellables)
+
+Just(true)
+    .bind(to: view.bindable.clipsToBounds)
+    .store(in: &cancellables)
+
+Just(.systemPink)
+    .bind(to: view.bindable.tintColor)
+    .store(in: &cancellables)
+
+Just(.systemPink)
+    .bind(to: view.bindable.backgroundColor)
+    .store(in: &cancellables)
+
+Just(.systemPink)
+    .bind(to: view.bindable.borderColor)
+    .store(in: &cancellables)
+
+Just(.systemPink)
+    .bind(to: view.bindable.shadowColor)
+    .store(in: &cancellables)
 
 Just(0.5)
     .bind(to: view.bindable.alpha)
+    .store(in: &cancellables)
+
+Just(true)
+    .bind(to: view.bindable.isOpaque)
     .store(in: &cancellables)
 
 Just(true)

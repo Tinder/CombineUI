@@ -9,6 +9,18 @@ extension Bindable where Target: UISwitch {
 
     @preconcurrency
     @MainActor
+    public var onTintColor: Binding<UIColor> {
+        Binding(self, for: \.onTintColor)
+    }
+
+    @preconcurrency
+    @MainActor
+    public var thumbTintColor: Binding<UIColor> {
+        Binding(self, for: \.thumbTintColor)
+    }
+
+    @preconcurrency
+    @MainActor
     public var isOn: Binding<Bool> {
         Binding(self, for: \.isOn)
     }

@@ -1,11 +1,17 @@
 //
-//  Copyright © 2023 Tinder (Match Group, LLC)
+//  Copyright © 2024 Tinder (Match Group, LLC)
 //
 
 import Combine
 import UIKit
 
-extension Bindable where Target: UITextField {
+extension Bindable where Target: UITextView {
+
+    @preconcurrency
+    @MainActor
+    public var isEditable: Binding<Bool> {
+        Binding(self, for: \.isEditable)
+    }
 
     @preconcurrency
     @MainActor
@@ -23,18 +29,6 @@ extension Bindable where Target: UITextField {
     @MainActor
     public var textAlignment: Binding<NSTextAlignment> {
         Binding(self, for: \.textAlignment)
-    }
-
-    @preconcurrency
-    @MainActor
-    public var placeholder: Binding<String> {
-        Binding(self, for: \.placeholder)
-    }
-
-    @preconcurrency
-    @MainActor
-    public var attributedPlaceholder: Binding<AttributedString> {
-        Binding(self) { $0.attributedPlaceholder = NSAttributedString($1) }
     }
 
     @preconcurrency

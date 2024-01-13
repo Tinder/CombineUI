@@ -8,6 +8,20 @@ import XCTest
 
 final class UISwitchTests: XCTestCase {
 
+    func testOnTintColor() {
+        let `switch`: UISwitch = .init()
+        expect(`switch`.onTintColor) == nil
+        `switch`.bindable.onTintColor.receiveValue(.systemPink)
+        expect(`switch`.onTintColor) == .systemPink
+    }
+
+    func testThumbTintColor() {
+        let `switch`: UISwitch = .init()
+        expect(`switch`.thumbTintColor) == nil
+        `switch`.bindable.thumbTintColor.receiveValue(.systemPink)
+        expect(`switch`.thumbTintColor) == .systemPink
+    }
+
     func testIsOn() {
         let `switch`: UISwitch = .init()
         expect(`switch`.isOn) == false
