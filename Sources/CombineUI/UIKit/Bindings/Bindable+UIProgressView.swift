@@ -9,6 +9,18 @@ extension Bindable where Target: UIProgressView {
 
     @preconcurrency
     @MainActor
+    public var trackTintColor: Binding<UIColor> {
+        Binding(self, for: \.trackTintColor)
+    }
+
+    @preconcurrency
+    @MainActor
+    public var progressTintColor: Binding<UIColor> {
+        Binding(self, for: \.progressTintColor)
+    }
+
+    @preconcurrency
+    @MainActor
     public var progress: Binding<Float> {
         Binding(self, for: \.progress)
     }

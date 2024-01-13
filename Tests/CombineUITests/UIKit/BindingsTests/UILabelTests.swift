@@ -15,6 +15,21 @@ final class UILabelTests: XCTestCase {
         expect(label.isEnabled) == false
     }
 
+    func testFont() {
+        let label: UILabel = .init()
+        expect(label.font) == .systemFont(ofSize: 17)
+        label.bindable.font.receiveValue(.systemFont(ofSize: 23))
+        expect(label.font) == .systemFont(ofSize: 23)
+    }
+
+    func testTextColor() {
+        let label: UILabel = .init()
+        label.textColor = .systemMint
+        expect(label.textColor) == .systemMint
+        label.bindable.textColor.receiveValue(.systemPink)
+        expect(label.textColor) == .systemPink
+    }
+
     func testText() {
         let label: UILabel = .init()
         expect(label.text) == nil

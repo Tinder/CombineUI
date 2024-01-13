@@ -26,6 +26,21 @@ final class UIRefreshControlTests: XCTestCase {
         }
     }
 
+    func testTintColor() {
+        let refreshControl: TestRefreshControl = .init()
+        refreshControl.tintColor = .systemMint
+        expect(refreshControl.tintColor) == .systemMint
+        refreshControl.bindable.tintColor.receiveValue(.systemPink)
+        expect(refreshControl.tintColor) == .systemPink
+    }
+
+    func testAttributedTitle() {
+        let refreshControl: TestRefreshControl = .init()
+        expect(refreshControl.attributedTitle) == nil
+        refreshControl.bindable.attributedTitle.receiveValue(AttributedString("Attributed Text"))
+        expect(refreshControl.attributedTitle?.string) == "Attributed Text"
+    }
+
     func testRefreshControl() {
         let refreshControl: TestRefreshControl = .init()
         expect(refreshControl.isRefreshing) == false

@@ -15,6 +15,18 @@ extension Bindable where Target: UILabel {
 
     @preconcurrency
     @MainActor
+    public var font: Binding<UIFont> {
+        Binding(self, for: \.font)
+    }
+
+    @preconcurrency
+    @MainActor
+    public var textColor: Binding<UIColor> {
+        Binding(self, for: \.textColor)
+    }
+
+    @preconcurrency
+    @MainActor
     public var text: Binding<String> {
         Binding(self, for: \.text)
     }
