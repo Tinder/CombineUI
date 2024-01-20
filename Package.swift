@@ -27,9 +27,7 @@ let package = Package(
     targets: [
         .target(
             name: "CombineUI",
-            swiftSettings: [
-                .unsafeFlags(["-strict-concurrency=complete"]),
-            ],
+            swiftSettings: .swiftSettings,
             plugins: [
                 .plugin(name: SwiftLint.plugin),
             ]),
@@ -55,3 +53,12 @@ let package = Package(
             checksum: "963121d6babf2bf5fd66a21ac9297e86d855cbc9d28322790646b88dceca00f1"),
     ]
 )
+
+extension Array where Element == SwiftSetting {
+
+    static var swiftSettings: [SwiftSetting] {
+        guard let value: String = Context.environment["SWIFT_STRICT_CONCURRENCY"]
+        else { return [] }
+        return [.unsafeFlags(["-strict-concurrency=\(value)"])]
+    }
+}
