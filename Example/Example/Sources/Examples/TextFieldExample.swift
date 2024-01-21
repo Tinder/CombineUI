@@ -35,7 +35,9 @@ class TextFieldExample: UIViewController {
             .store(in: &cancellables)
         $textField
             .attributedText
-            .map(\.string)
+            .map(\.characters)
+            .map { $0[...] }
+            .map(String.init)
             .sink { print(Date(), "$textField.attributedText", "...", "\"\($0)\"") }
             .store(in: &cancellables)
         $textField
@@ -56,7 +58,9 @@ class TextFieldExample: UIViewController {
             .store(in: &cancellables)
         textField
             .attributedTextPublisher()
-            .map(\.string)
+            .map(\.characters)
+            .map { $0[...] }
+            .map(String.init)
             .sink { print(Date(), "textField.attributedTextPublisher()", "...", "\"\($0)\"") }
             .store(in: &cancellables)
         textField.becomeFirstResponder()
