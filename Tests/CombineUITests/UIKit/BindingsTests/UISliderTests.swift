@@ -6,6 +6,7 @@
 import Nimble
 import XCTest
 
+@MainActor
 final class UISliderTests: XCTestCase {
 
     func testIsContinuous() {

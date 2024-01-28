@@ -6,6 +6,7 @@
 import Nimble
 import XCTest
 
+@MainActor
 final class UIRefreshControlTests: XCTestCase {
 
     private final class TestRefreshControl: UIRefreshControl {

@@ -37,6 +37,7 @@ let package = Package(
                 "CombineUI",
                 "Nimble",
             ],
+            swiftSettings: .swiftSettings,
             plugins: [
                 .plugin(name: SwiftLint.plugin),
             ]),
