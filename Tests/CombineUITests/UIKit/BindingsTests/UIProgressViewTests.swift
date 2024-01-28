@@ -6,6 +6,7 @@
 import Nimble
 import XCTest
 
+@MainActor
 final class UIProgressViewTests: XCTestCase {
 
     func testTrackTintColor() {
