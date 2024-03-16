@@ -6,9 +6,9 @@
 import Nimble
 import XCTest
 
-@MainActor
 final class UIPageControlTests: XCTestCase {
 
+    @MainActor
     func testPageIndicatorTintColor() {
         let pageControl: UIPageControl = .init()
         pageControl.pageIndicatorTintColor = .systemMint
@@ -17,6 +17,7 @@ final class UIPageControlTests: XCTestCase {
         expect(pageControl.pageIndicatorTintColor) == .systemPink
     }
 
+    @MainActor
     func testCurrentPageIndicatorTintColor() {
         let pageControl: UIPageControl = .init()
         pageControl.currentPageIndicatorTintColor = .systemMint
@@ -25,6 +26,7 @@ final class UIPageControlTests: XCTestCase {
         expect(pageControl.currentPageIndicatorTintColor) == .systemPink
     }
 
+    @MainActor
     func testCurrentPage() {
         let pageControl: UIPageControl = .init()
         pageControl.numberOfPages = 2
@@ -33,6 +35,7 @@ final class UIPageControlTests: XCTestCase {
         expect(pageControl.currentPage) == 1
     }
 
+    @MainActor
     func testNumberOfPages() {
         let pageControl: UIPageControl = .init()
         expect(pageControl.numberOfPages) == 0
@@ -40,6 +43,7 @@ final class UIPageControlTests: XCTestCase {
         expect(pageControl.numberOfPages) == 2
     }
 
+    @MainActor
     func testHidesForSinglePage() {
         let pageControl: UIPageControl = .init()
         expect(pageControl.hidesForSinglePage) == false

@@ -7,7 +7,6 @@ import CombineUI
 import Nimble
 import XCTest
 
-@MainActor
 final class SearchBarTests: XCTestCase {
 
     private final class TestViewController: UIViewController {
@@ -27,6 +26,7 @@ final class SearchBarTests: XCTestCase {
         super.tearDown()
     }
 
+    @MainActor
     func testTextDidBeginEditing() {
         let viewController: TestViewController = .init()
         let searchBar: UISearchBar = viewController.searchBar
@@ -43,6 +43,7 @@ final class SearchBarTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testTextDidEndEditing() {
         let viewController: TestViewController = .init()
         let searchBar: UISearchBar = viewController.searchBar
@@ -59,6 +60,7 @@ final class SearchBarTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testTextDidChange() {
         let viewController: TestViewController = .init()
         let searchBar: UISearchBar = viewController.searchBar
@@ -75,6 +77,7 @@ final class SearchBarTests: XCTestCase {
         expect(receivedValues) == ["Hello", "World"]
     }
 
+    @MainActor
     func testSearchButtonClicked() {
         let viewController: TestViewController = .init()
         let searchBar: UISearchBar = viewController.searchBar
@@ -91,6 +94,7 @@ final class SearchBarTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testBookmarkButtonClicked() {
         let viewController: TestViewController = .init()
         let searchBar: UISearchBar = viewController.searchBar
@@ -107,6 +111,7 @@ final class SearchBarTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testCancelButtonClicked() {
         let viewController: TestViewController = .init()
         let searchBar: UISearchBar = viewController.searchBar
@@ -123,6 +128,7 @@ final class SearchBarTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testResultsListButtonClicked() {
         let viewController: TestViewController = .init()
         let searchBar: UISearchBar = viewController.searchBar
@@ -139,6 +145,7 @@ final class SearchBarTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testSelectedScopeButtonIndexDidChange() {
         let viewController: TestViewController = .init()
         let searchBar: UISearchBar = viewController.searchBar

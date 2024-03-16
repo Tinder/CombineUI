@@ -6,9 +6,9 @@
 import Nimble
 import XCTest
 
-@MainActor
 final class UISwitchTests: XCTestCase {
 
+    @MainActor
     func testOnTintColor() {
         let `switch`: UISwitch = .init()
         expect(`switch`.onTintColor) == nil
@@ -16,6 +16,7 @@ final class UISwitchTests: XCTestCase {
         expect(`switch`.onTintColor) == .systemPink
     }
 
+    @MainActor
     func testThumbTintColor() {
         let `switch`: UISwitch = .init()
         expect(`switch`.thumbTintColor) == nil
@@ -23,6 +24,7 @@ final class UISwitchTests: XCTestCase {
         expect(`switch`.thumbTintColor) == .systemPink
     }
 
+    @MainActor
     func testIsOn() {
         let `switch`: UISwitch = .init()
         expect(`switch`.isOn) == false
@@ -30,6 +32,7 @@ final class UISwitchTests: XCTestCase {
         expect(`switch`.isOn) == true
     }
 
+    @MainActor
     func testIsOnAnimated() {
         let `switch`: UISwitch = .init()
         expect(`switch`.isOn) == false

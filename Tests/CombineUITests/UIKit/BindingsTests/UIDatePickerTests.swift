@@ -6,9 +6,9 @@
 import Nimble
 import XCTest
 
-@MainActor
 final class UIDatePickerTests: XCTestCase {
 
+    @MainActor
     func testCountDownDuration() {
         let datePicker: UIDatePicker = .init()
         datePicker.datePickerMode = .countDownTimer
@@ -18,6 +18,7 @@ final class UIDatePickerTests: XCTestCase {
         expect(datePicker.countDownDuration) == duration
     }
 
+    @MainActor
     func testDate() {
         let datePicker: UIDatePicker = .init()
         let date: Date = .init(timeIntervalSinceReferenceDate: 0)
@@ -26,6 +27,7 @@ final class UIDatePickerTests: XCTestCase {
         expect(datePicker.date) == date
     }
 
+    @MainActor
     func testDateAnimated() {
         let datePicker: UIDatePicker = .init()
         let date: Date = .init(timeIntervalSinceReferenceDate: 0)

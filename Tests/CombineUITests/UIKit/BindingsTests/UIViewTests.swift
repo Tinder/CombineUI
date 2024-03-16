@@ -6,9 +6,9 @@
 import Nimble
 import XCTest
 
-@MainActor
 final class UIViewTests: XCTestCase {
 
+    @MainActor
     func testIsUserInteractionEnabled() {
         let view: UIView = .init()
         expect(view.isUserInteractionEnabled) == true
@@ -16,6 +16,7 @@ final class UIViewTests: XCTestCase {
         expect(view.isUserInteractionEnabled) == false
     }
 
+    @MainActor
     func testIsMultipleTouchEnabled() {
         let view: UIView = .init()
         expect(view.isMultipleTouchEnabled) == false
@@ -23,6 +24,7 @@ final class UIViewTests: XCTestCase {
         expect(view.isMultipleTouchEnabled) == true
     }
 
+    @MainActor
     func testIsExclusiveTouch() {
         let view: UIView = .init()
         expect(view.isExclusiveTouch) == false
@@ -30,6 +32,7 @@ final class UIViewTests: XCTestCase {
         expect(view.isExclusiveTouch) == true
     }
 
+    @MainActor
     func testClipsToBounds() {
         let view: UIView = .init()
         expect(view.clipsToBounds) == false
@@ -37,6 +40,7 @@ final class UIViewTests: XCTestCase {
         expect(view.clipsToBounds) == true
     }
 
+    @MainActor
     func testTintColor() {
         let view: UIView = .init()
         view.tintColor = .systemMint
@@ -45,6 +49,7 @@ final class UIViewTests: XCTestCase {
         expect(view.tintColor) == .systemPink
     }
 
+    @MainActor
     func testBackgroundColor() {
         let view: UIView = .init()
         view.backgroundColor = .systemMint
@@ -53,6 +58,7 @@ final class UIViewTests: XCTestCase {
         expect(view.backgroundColor) == .systemPink
     }
 
+    @MainActor
     func testBorderColor() {
         let view: UIView = .init()
         view.layer.borderColor = UIColor.systemMint.cgColor
@@ -61,6 +67,7 @@ final class UIViewTests: XCTestCase {
         expect(view.layer.borderColor) == UIColor.systemPink.cgColor
     }
 
+    @MainActor
     func testShadowColor() {
         let view: UIView = .init()
         view.layer.shadowColor = UIColor.systemMint.cgColor
@@ -69,6 +76,7 @@ final class UIViewTests: XCTestCase {
         expect(view.layer.shadowColor) == UIColor.systemPink.cgColor
     }
 
+    @MainActor
     func testAlpha() {
         let view: UIView = .init()
         expect(view.alpha) == 1
@@ -76,6 +84,7 @@ final class UIViewTests: XCTestCase {
         expect(view.alpha) == 0.5
     }
 
+    @MainActor
     func testIsOpaque() {
         let view: UIView = .init()
         expect(view.isOpaque) == true
@@ -83,6 +92,7 @@ final class UIViewTests: XCTestCase {
         expect(view.isOpaque) == false
     }
 
+    @MainActor
     func testIsHidden() {
         let view: UIView = .init()
         expect(view.isHidden) == false

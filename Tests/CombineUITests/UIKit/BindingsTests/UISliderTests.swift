@@ -6,9 +6,9 @@
 import Nimble
 import XCTest
 
-@MainActor
 final class UISliderTests: XCTestCase {
 
+    @MainActor
     func testIsContinuous() {
         let slider: UISlider = .init()
         expect(slider.isContinuous) == true
@@ -16,6 +16,7 @@ final class UISliderTests: XCTestCase {
         expect(slider.isContinuous) == false
     }
 
+    @MainActor
     func testMinimumValue() {
         let slider: UISlider = .init()
         expect(slider.minimumValue) == 0
@@ -23,6 +24,7 @@ final class UISliderTests: XCTestCase {
         expect(slider.minimumValue) == 1
     }
 
+    @MainActor
     func testMaximumValue() {
         let slider: UISlider = .init()
         expect(slider.maximumValue) == 1
@@ -30,6 +32,7 @@ final class UISliderTests: XCTestCase {
         expect(slider.maximumValue) == 10
     }
 
+    @MainActor
     func testMinimumTrackTintColor() {
         let slider: UISlider = .init()
         expect(slider.minimumTrackTintColor) == nil
@@ -37,6 +40,7 @@ final class UISliderTests: XCTestCase {
         expect(slider.minimumTrackTintColor) == .systemPink
     }
 
+    @MainActor
     func testMaximumTrackTintColor() {
         let slider: UISlider = .init()
         expect(slider.maximumTrackTintColor) == nil
@@ -44,6 +48,7 @@ final class UISliderTests: XCTestCase {
         expect(slider.maximumTrackTintColor) == .systemPink
     }
 
+    @MainActor
     func testThumbTintColor() {
         let slider: UISlider = .init()
         expect(slider.thumbTintColor) == nil
@@ -51,6 +56,7 @@ final class UISliderTests: XCTestCase {
         expect(slider.thumbTintColor) == .systemPink
     }
 
+    @MainActor
     func testValue() {
         let slider: UISlider = .init()
         expect(slider.value) == 0
@@ -58,6 +64,7 @@ final class UISliderTests: XCTestCase {
         expect(slider.value) == 1
     }
 
+    @MainActor
     func testValueAnimated() {
         let slider: UISlider = .init()
         expect(slider.value) == 0

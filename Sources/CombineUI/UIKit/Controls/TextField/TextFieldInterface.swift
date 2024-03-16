@@ -21,20 +21,26 @@ public struct TextFieldInterface<T: UITextField> {
 
     // MARK: - UITextFieldDelegate
 
-    public private(set) lazy var didBeginEditing: AnyPublisher<Void, Never> = delegate
-        .delegatePublisher(for: \.didBeginEditing)
-        .share()
-        .eraseToAnyPublisher()
+    public private(set) lazy var didBeginEditing: AnyPublisher<Void, Never> = { @MainActor in
+        delegate
+            .didBeginEditing
+            .share()
+            .eraseToAnyPublisher()
+    }()
 
-    public private(set) lazy var didEndEditing: AnyPublisher<Void, Never> = delegate
-        .delegatePublisher(for: \.didEndEditing)
-        .share()
-        .eraseToAnyPublisher()
+    public private(set) lazy var didEndEditing: AnyPublisher<Void, Never> = { @MainActor in
+        delegate
+            .didEndEditing
+            .share()
+            .eraseToAnyPublisher()
+    }()
 
-    public private(set) lazy var didChangeSelection: AnyPublisher<Void, Never> = delegate
-        .delegatePublisher(for: \.didChangeSelection)
-        .share()
-        .eraseToAnyPublisher()
+    public private(set) lazy var didChangeSelection: AnyPublisher<Void, Never> = { @MainActor in
+        delegate
+            .didChangeSelection
+            .share()
+            .eraseToAnyPublisher()
+    }()
 
     private let textField: T
     private let delegate: TextFieldDelegate = .init()

@@ -11,45 +11,61 @@ public struct SearchBarInterface<T: UISearchBar> {
 
     // MARK: - UISearchBarDelegate
 
-    public private(set) lazy var textDidBeginEditing: AnyPublisher<Void, Never> = delegate
-        .delegatePublisher(for: \.textDidBeginEditing)
-        .share()
-        .eraseToAnyPublisher()
+    public private(set) lazy var textDidBeginEditing: AnyPublisher<Void, Never> = { @MainActor in
+        delegate
+            .textDidBeginEditing
+            .share()
+            .eraseToAnyPublisher()
+    }()
 
-    public private(set) lazy var textDidEndEditing: AnyPublisher<Void, Never> = delegate
-        .delegatePublisher(for: \.textDidEndEditing)
-        .share()
-        .eraseToAnyPublisher()
+    public private(set) lazy var textDidEndEditing: AnyPublisher<Void, Never> = { @MainActor in
+        delegate
+            .textDidEndEditing
+            .share()
+            .eraseToAnyPublisher()
+    }()
 
-    public private(set) lazy var textDidChange: AnyPublisher<String, Never> = delegate
-        .delegatePublisher(for: \.textDidChange)
-        .share()
-        .eraseToAnyPublisher()
+    public private(set) lazy var textDidChange: AnyPublisher<String, Never> = { @MainActor in
+        delegate
+            .textDidChange
+            .share()
+            .eraseToAnyPublisher()
+    }()
 
-    public private(set) lazy var searchButtonClicked: AnyPublisher<Void, Never> = delegate
-        .delegatePublisher(for: \.searchButtonClicked)
-        .share()
-        .eraseToAnyPublisher()
+    public private(set) lazy var searchButtonClicked: AnyPublisher<Void, Never> = { @MainActor in
+        delegate
+            .searchButtonClicked
+            .share()
+            .eraseToAnyPublisher()
+    }()
 
-    public private(set) lazy var bookmarkButtonClicked: AnyPublisher<Void, Never> = delegate
-        .delegatePublisher(for: \.bookmarkButtonClicked)
-        .share()
-        .eraseToAnyPublisher()
+    public private(set) lazy var bookmarkButtonClicked: AnyPublisher<Void, Never> = { @MainActor in
+        delegate
+            .bookmarkButtonClicked
+            .share()
+            .eraseToAnyPublisher()
+    }()
 
-    public private(set) lazy var cancelButtonClicked: AnyPublisher<Void, Never> = delegate
-        .delegatePublisher(for: \.cancelButtonClicked)
-        .share()
-        .eraseToAnyPublisher()
+    public private(set) lazy var cancelButtonClicked: AnyPublisher<Void, Never> = { @MainActor in
+        delegate
+            .cancelButtonClicked
+            .share()
+            .eraseToAnyPublisher()
+    }()
 
-    public private(set) lazy var resultsListButtonClicked: AnyPublisher<Void, Never> = delegate
-        .delegatePublisher(for: \.resultsListButtonClicked)
-        .share()
-        .eraseToAnyPublisher()
+    public private(set) lazy var resultsListButtonClicked: AnyPublisher<Void, Never> = { @MainActor in
+        delegate
+            .resultsListButtonClicked
+            .share()
+            .eraseToAnyPublisher()
+    }()
 
-    public private(set) lazy var selectedScopeButtonIndexDidChange: AnyPublisher<Int, Never> = delegate
-        .delegatePublisher(for: \.selectedScopeButtonIndexDidChange)
-        .share()
-        .eraseToAnyPublisher()
+    public private(set) lazy var selectedScopeButtonIndexDidChange: AnyPublisher<Int, Never> = { @MainActor in
+        delegate
+            .selectedScopeButtonIndexDidChange
+            .share()
+            .eraseToAnyPublisher()
+    }()
 
     private let delegate: SearchBarDelegate = .init()
 

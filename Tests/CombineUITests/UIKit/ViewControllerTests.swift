@@ -7,7 +7,6 @@ import CombineUI
 import Nimble
 import XCTest
 
-@MainActor
 final class ViewControllerTests: XCTestCase {
 
     private final class TestViewController: UIViewController {
@@ -27,6 +26,7 @@ final class ViewControllerTests: XCTestCase {
         super.tearDown()
     }
 
+    @MainActor
     func testLifecyclePublisher() {
         let testViewController: TestViewController = .init()
         let viewController: UIViewController = testViewController.viewController
@@ -60,6 +60,7 @@ final class ViewControllerTests: XCTestCase {
         ]
     }
 
+    @MainActor
     func testIsVisiblePublisher() {
         let testViewController: TestViewController = .init()
         let viewController: UIViewController = testViewController.viewController
@@ -93,6 +94,7 @@ final class ViewControllerTests: XCTestCase {
         expect(receivedValues) == [true, false, true, false, true]
     }
 
+    @MainActor
     func testIsVisible() {
         let testViewController: TestViewController = .init()
         let viewController: UIViewController = testViewController.viewController
@@ -126,6 +128,7 @@ final class ViewControllerTests: XCTestCase {
         expect(receivedValues) == [true, false, true, false, true]
     }
 
+    @MainActor
     func testViewWillAppear() {
         let testViewController: TestViewController = .init()
         let viewController: UIViewController = testViewController.viewController
@@ -143,6 +146,7 @@ final class ViewControllerTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testViewDidAppear() {
         let testViewController: TestViewController = .init()
         let viewController: UIViewController = testViewController.viewController
@@ -160,6 +164,7 @@ final class ViewControllerTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testViewWillDisappear() {
         let testViewController: TestViewController = .init()
         let viewController: UIViewController = testViewController.viewController
@@ -177,6 +182,7 @@ final class ViewControllerTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testViewDidDisappear() {
         let testViewController: TestViewController = .init()
         let viewController: UIViewController = testViewController.viewController

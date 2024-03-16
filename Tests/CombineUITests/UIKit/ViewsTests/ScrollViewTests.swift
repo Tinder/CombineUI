@@ -7,7 +7,6 @@ import CombineUI
 import Nimble
 import XCTest
 
-@MainActor
 final class ScrollViewTests: XCTestCase {
 
     private final class TestViewController: UIViewController {
@@ -27,6 +26,7 @@ final class ScrollViewTests: XCTestCase {
         super.tearDown()
     }
 
+    @MainActor
     func testDidScroll() {
         let viewController: TestViewController = .init()
         let scrollView: UIScrollView = viewController.scrollView
@@ -43,6 +43,7 @@ final class ScrollViewTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testDidZoom() {
         let viewController: TestViewController = .init()
         let scrollView: UIScrollView = viewController.scrollView
@@ -59,6 +60,7 @@ final class ScrollViewTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testWillBeginDragging() {
         let viewController: TestViewController = .init()
         let scrollView: UIScrollView = viewController.scrollView
@@ -75,6 +77,7 @@ final class ScrollViewTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testWillEndDragging() {
         let viewController: TestViewController = .init()
         let scrollView: UIScrollView = viewController.scrollView
@@ -106,6 +109,7 @@ final class ScrollViewTests: XCTestCase {
         ]
     }
 
+    @MainActor
     func testDidEndDragging() {
         let viewController: TestViewController = .init()
         let scrollView: UIScrollView = viewController.scrollView
@@ -122,6 +126,7 @@ final class ScrollViewTests: XCTestCase {
         expect(receivedValues) == [true, false]
     }
 
+    @MainActor
     func testWillBeginDecelerating() {
         let viewController: TestViewController = .init()
         let scrollView: UIScrollView = viewController.scrollView
@@ -138,6 +143,7 @@ final class ScrollViewTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testDidEndDecelerating() {
         let viewController: TestViewController = .init()
         let scrollView: UIScrollView = viewController.scrollView
@@ -154,6 +160,7 @@ final class ScrollViewTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testDidEndScrollingAnimation() {
         let viewController: TestViewController = .init()
         let scrollView: UIScrollView = viewController.scrollView
@@ -170,6 +177,7 @@ final class ScrollViewTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testWillBeginZooming() {
         let viewController: TestViewController = .init()
         let scrollView: UIScrollView = viewController.scrollView
@@ -187,6 +195,7 @@ final class ScrollViewTests: XCTestCase {
         expect(receivedValues) == [view, nil]
     }
 
+    @MainActor
     func testDidEndZooming() {
         let viewController: TestViewController = .init()
         let scrollView: UIScrollView = viewController.scrollView
@@ -204,6 +213,7 @@ final class ScrollViewTests: XCTestCase {
         expect(receivedValues) == [(view, CGFloat(100)), (nil, CGFloat(23))]
     }
 
+    @MainActor
     func testDidScrollToTop() {
         let viewController: TestViewController = .init()
         let scrollView: UIScrollView = viewController.scrollView
@@ -220,6 +230,7 @@ final class ScrollViewTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testDidChangeAdjustedContentInset() {
         let viewController: TestViewController = .init()
         let scrollView: UIScrollView = viewController.scrollView

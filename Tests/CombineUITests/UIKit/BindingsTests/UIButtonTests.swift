@@ -6,9 +6,9 @@
 import Nimble
 import XCTest
 
-@MainActor
 final class UIButtonTests: XCTestCase {
 
+    @MainActor
     func testTitleColor() {
         let button: UIButton = .init()
         button.setTitleColor(.systemMint, for: .normal)
@@ -17,6 +17,7 @@ final class UIButtonTests: XCTestCase {
         expect(button.titleColor(for: .normal)) == .systemPink
     }
 
+    @MainActor
     func testTitleShadowColor() {
         let button: UIButton = .init()
         button.setTitleShadowColor(.systemMint, for: .normal)
@@ -25,6 +26,7 @@ final class UIButtonTests: XCTestCase {
         expect(button.titleShadowColor(for: .normal)) == .systemPink
     }
 
+    @MainActor
     func testTitle() {
         let button: UIButton = .init()
         expect(button.title(for: .normal)) == nil
@@ -32,6 +34,7 @@ final class UIButtonTests: XCTestCase {
         expect(button.title(for: .normal)) == "Title"
     }
 
+    @MainActor
     func testAttributedTitle() {
         let button: UIButton = .init()
         expect(button.attributedTitle(for: .normal)?.string) == nil
@@ -39,6 +42,7 @@ final class UIButtonTests: XCTestCase {
         expect(button.attributedTitle(for: .normal)?.string) == "Attributed Title"
     }
 
+    @MainActor
     func testImage() {
         let button: UIButton = .init()
         expect(button.image(for: .normal)) == nil
@@ -46,6 +50,7 @@ final class UIButtonTests: XCTestCase {
         expect(button.image(for: .normal)) == .checkmark
     }
 
+    @MainActor
     func testBackgroundImage() {
         let button: UIButton = .init()
         expect(button.backgroundImage(for: .normal)) == nil

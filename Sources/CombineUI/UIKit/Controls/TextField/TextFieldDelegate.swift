@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@MainActor
 internal final class TextFieldDelegate: NSObject, UITextFieldDelegate {
 
     // swiftlint:disable private_subject
@@ -14,12 +15,6 @@ internal final class TextFieldDelegate: NSObject, UITextFieldDelegate {
     internal let didChangeSelection: PassthroughSubject<Void, Never> = .init()
 
     // swiftlint:enable private_subject
-
-    internal func delegatePublisher<T, U>(
-        for keyPath: KeyPath<TextFieldDelegate, PassthroughSubject<T, U>>
-    ) -> AnyPublisher<T, U> {
-        self[keyPath: keyPath].eraseToAnyPublisher()
-    }
 
     // MARK: - UITextFieldDelegate
 

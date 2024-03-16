@@ -7,7 +7,6 @@ import CombineUI
 import Nimble
 import XCTest
 
-@MainActor
 final class GestureRecognizerTests: XCTestCase {
 
     private final class TestViewController: UIViewController {
@@ -43,6 +42,7 @@ final class GestureRecognizerTests: XCTestCase {
         super.tearDown()
     }
 
+    @MainActor
     func testGestureRecognizer() {
         let viewController: TestViewController = .init()
         let gestureRecognizer: TestGestureRecognizer = viewController.gestureRecognizer

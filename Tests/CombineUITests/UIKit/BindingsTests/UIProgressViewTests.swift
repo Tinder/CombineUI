@@ -6,9 +6,9 @@
 import Nimble
 import XCTest
 
-@MainActor
 final class UIProgressViewTests: XCTestCase {
 
+    @MainActor
     func testTrackTintColor() {
         let progressView: UIProgressView = .init()
         progressView.trackTintColor = .systemMint
@@ -17,6 +17,7 @@ final class UIProgressViewTests: XCTestCase {
         expect(progressView.trackTintColor) == .systemPink
     }
 
+    @MainActor
     func testProgressTintColor() {
         let progressView: UIProgressView = .init()
         progressView.progressTintColor = .systemMint
@@ -25,6 +26,7 @@ final class UIProgressViewTests: XCTestCase {
         expect(progressView.progressTintColor) == .systemPink
     }
 
+    @MainActor
     func testProgress() {
         let progressView: UIProgressView = .init()
         expect(progressView.progress) == 0
@@ -32,6 +34,7 @@ final class UIProgressViewTests: XCTestCase {
         expect(progressView.progress) == 1
     }
 
+    @MainActor
     func testProgressAnimated() {
         let progressView: UIProgressView = .init()
         expect(progressView.progress) == 0

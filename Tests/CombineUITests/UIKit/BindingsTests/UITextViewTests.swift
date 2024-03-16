@@ -6,9 +6,9 @@
 import Nimble
 import XCTest
 
-@MainActor
 final class UITextViewTests: XCTestCase {
 
+    @MainActor
     func testIsEditable() {
         let textView: UITextView = .init()
         expect(textView.isEditable) == true
@@ -16,6 +16,7 @@ final class UITextViewTests: XCTestCase {
         expect(textView.isEditable) == false
     }
 
+    @MainActor
     func testFont() {
         let textView: UITextView = .init()
         expect(textView.font) == nil
@@ -23,6 +24,7 @@ final class UITextViewTests: XCTestCase {
         expect(textView.font) == .systemFont(ofSize: 23)
     }
 
+    @MainActor
     func testTextColor() {
         let textView: UITextView = .init()
         textView.textColor = .systemMint
@@ -31,6 +33,7 @@ final class UITextViewTests: XCTestCase {
         expect(textView.textColor) == .systemPink
     }
 
+    @MainActor
     func testTextAlignment() {
         let textView: UITextView = .init()
         expect(textView.textAlignment) == .natural
@@ -38,6 +41,7 @@ final class UITextViewTests: XCTestCase {
         expect(textView.textAlignment) == .left
     }
 
+    @MainActor
     func testText() {
         let textView: UITextView = .init()
         expect(textView.text?.isEmpty) == true
@@ -45,6 +49,7 @@ final class UITextViewTests: XCTestCase {
         expect(textView.text) == "Text"
     }
 
+    @MainActor
     func testAttributedText() {
         let textView: UITextView = .init()
         expect(textView.attributedText?.string.isEmpty) == true

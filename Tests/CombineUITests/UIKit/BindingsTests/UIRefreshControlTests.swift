@@ -6,7 +6,6 @@
 import Nimble
 import XCTest
 
-@MainActor
 final class UIRefreshControlTests: XCTestCase {
 
     private final class TestRefreshControl: UIRefreshControl {
@@ -27,6 +26,7 @@ final class UIRefreshControlTests: XCTestCase {
         }
     }
 
+    @MainActor
     func testTintColor() {
         let refreshControl: TestRefreshControl = .init()
         refreshControl.tintColor = .systemMint
@@ -35,6 +35,7 @@ final class UIRefreshControlTests: XCTestCase {
         expect(refreshControl.tintColor) == .systemPink
     }
 
+    @MainActor
     func testAttributedTitle() {
         let refreshControl: TestRefreshControl = .init()
         expect(refreshControl.attributedTitle) == nil
@@ -42,6 +43,7 @@ final class UIRefreshControlTests: XCTestCase {
         expect(refreshControl.attributedTitle?.string) == "Attributed Text"
     }
 
+    @MainActor
     func testRefreshControl() {
         let refreshControl: TestRefreshControl = .init()
         expect(refreshControl.isRefreshing) == false

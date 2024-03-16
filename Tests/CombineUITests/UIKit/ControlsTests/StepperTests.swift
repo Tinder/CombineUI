@@ -7,7 +7,6 @@ import CombineUI
 import Nimble
 import XCTest
 
-@MainActor
 final class StepperTests: XCTestCase {
 
     private final class TestViewController: UIViewController {
@@ -44,6 +43,7 @@ final class StepperTests: XCTestCase {
         super.tearDown()
     }
 
+    @MainActor
     func testStepper() {
         let viewController: TestViewController = .init()
         let stepper: TestStepper = viewController.stepper

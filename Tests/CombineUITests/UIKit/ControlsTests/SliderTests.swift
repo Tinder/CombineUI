@@ -7,7 +7,6 @@ import CombineUI
 import Nimble
 import XCTest
 
-@MainActor
 final class SliderTests: XCTestCase {
 
     private final class TestViewController: UIViewController {
@@ -44,6 +43,7 @@ final class SliderTests: XCTestCase {
         super.tearDown()
     }
 
+    @MainActor
     func testSlider() {
         let viewController: TestViewController = .init()
         let slider: TestSlider = viewController.slider

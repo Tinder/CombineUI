@@ -7,7 +7,6 @@ import CombineUI
 import Nimble
 import XCTest
 
-@MainActor
 final class ProgressViewTests: XCTestCase {
 
     private final class TestViewController: UIViewController {
@@ -27,6 +26,7 @@ final class ProgressViewTests: XCTestCase {
         super.tearDown()
     }
 
+    @MainActor
     func testProgressView() {
         let viewController: TestViewController = .init()
         let progressView: UIProgressView = viewController.progressView
