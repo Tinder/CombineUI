@@ -7,7 +7,6 @@ import CombineUI
 import Nimble
 import XCTest
 
-@MainActor
 final class ButtonTests: XCTestCase {
 
     private final class TestViewController: UIViewController {
@@ -43,6 +42,7 @@ final class ButtonTests: XCTestCase {
         super.tearDown()
     }
 
+    @MainActor
     func testButton() {
         let viewController: TestViewController = .init()
         let button: TestButton = viewController.button

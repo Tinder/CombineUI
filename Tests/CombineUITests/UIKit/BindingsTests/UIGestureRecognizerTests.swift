@@ -6,9 +6,9 @@
 import Nimble
 import XCTest
 
-@MainActor
 final class UIGestureRecognizerTests: XCTestCase {
 
+    @MainActor
     func testGestureRecognizer() {
         let gestureRecognizer: UIGestureRecognizer = .init()
         expect(gestureRecognizer.isEnabled) == true

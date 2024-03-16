@@ -6,9 +6,9 @@
 import Nimble
 import XCTest
 
-@MainActor
 final class UIImageViewTests: XCTestCase {
 
+    @MainActor
     func testImage() {
         let imageView: UIImageView = .init()
         expect(imageView.image) == nil
@@ -16,6 +16,7 @@ final class UIImageViewTests: XCTestCase {
         expect(imageView.image) == .checkmark
     }
 
+    @MainActor
     func testHighlightedImage() {
         let imageView: UIImageView = .init()
         expect(imageView.highlightedImage) == nil
@@ -23,6 +24,7 @@ final class UIImageViewTests: XCTestCase {
         expect(imageView.highlightedImage) == .checkmark
     }
 
+    @MainActor
     func testIsHighlighted() {
         let imageView: UIImageView = .init()
         expect(imageView.isHighlighted) == false

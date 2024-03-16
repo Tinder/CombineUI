@@ -7,7 +7,6 @@ import CombineUI
 import Nimble
 import XCTest
 
-@MainActor
 final class TextFieldTests: XCTestCase {
 
     private final class TestViewController: UIViewController {
@@ -49,6 +48,7 @@ final class TextFieldTests: XCTestCase {
         super.tearDown()
     }
 
+    @MainActor
     func testText() {
         let viewController: TestViewController = .init()
         let textField: TestTextField = viewController.textField
@@ -66,6 +66,7 @@ final class TextFieldTests: XCTestCase {
         expect(receivedValues) == ["", "Hello", "World"]
     }
 
+    @MainActor
     func testAttributedText() {
         let viewController: TestViewController = .init()
         let textField: TestTextField = viewController.textField
@@ -86,6 +87,7 @@ final class TextFieldTests: XCTestCase {
         expect(receivedValues) == ["", "Hello", "World"]
     }
 
+    @MainActor
     func testDidBeginEditing() {
         let viewController: TestViewController = .init()
         let textField: TestTextField = viewController.textField
@@ -102,6 +104,7 @@ final class TextFieldTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testDidEndEditing() {
         let viewController: TestViewController = .init()
         let textField: TestTextField = viewController.textField
@@ -118,6 +121,7 @@ final class TextFieldTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testDidChangeSelection() {
         let viewController: TestViewController = .init()
         let textField: TestTextField = viewController.textField

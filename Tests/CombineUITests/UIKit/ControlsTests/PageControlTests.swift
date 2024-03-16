@@ -7,7 +7,6 @@ import CombineUI
 import Nimble
 import XCTest
 
-@MainActor
 final class PageControlTests: XCTestCase {
 
     private final class TestViewController: UIViewController {
@@ -48,6 +47,7 @@ final class PageControlTests: XCTestCase {
         super.tearDown()
     }
 
+    @MainActor
     func testPageControl() {
         let viewController: TestViewController = .init()
         let pageControl: TestPageControl = viewController.pageControl

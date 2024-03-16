@@ -7,7 +7,6 @@ import CombineUI
 import Nimble
 import XCTest
 
-@MainActor
 final class ControlTests: XCTestCase {
 
     private final class TestViewController: UIViewController {
@@ -112,6 +111,7 @@ final class ControlTests: XCTestCase {
         super.tearDown()
     }
 
+    @MainActor
     func testAllEvents() {
         let control: TestControl = .init()
         var events: [UIControl.Event] = []
@@ -162,6 +162,7 @@ final class ControlTests: XCTestCase {
         ]
     }
 
+    @MainActor
     func testAllEditingEvents() {
         let control: TestControl = .init()
         var events: [UIControl.Event] = []
@@ -188,6 +189,7 @@ final class ControlTests: XCTestCase {
         ]
     }
 
+    @MainActor
     func testTouchDown() {
         let viewController: TestViewController = .init()
         let control: TestControl = viewController.control
@@ -205,6 +207,7 @@ final class ControlTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testTouchDownRepeat() {
         let viewController: TestViewController = .init()
         let control: TestControl = viewController.control
@@ -222,6 +225,7 @@ final class ControlTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testTouchDragInside() {
         let viewController: TestViewController = .init()
         let control: TestControl = viewController.control
@@ -239,6 +243,7 @@ final class ControlTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testTouchDragOutside() {
         let viewController: TestViewController = .init()
         let control: TestControl = viewController.control
@@ -256,6 +261,7 @@ final class ControlTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testTouchDragEnter() {
         let viewController: TestViewController = .init()
         let control: TestControl = viewController.control
@@ -273,6 +279,7 @@ final class ControlTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testTouchDragExit() {
         let viewController: TestViewController = .init()
         let control: TestControl = viewController.control
@@ -290,6 +297,7 @@ final class ControlTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testTouchUpInside() {
         let viewController: TestViewController = .init()
         let control: TestControl = viewController.control
@@ -307,6 +315,7 @@ final class ControlTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testTouchUpOutside() {
         let viewController: TestViewController = .init()
         let control: TestControl = viewController.control
@@ -324,6 +333,7 @@ final class ControlTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testTouchCancel() {
         let viewController: TestViewController = .init()
         let control: TestControl = viewController.control
@@ -341,6 +351,7 @@ final class ControlTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testValueChanged() {
         let viewController: TestViewController = .init()
         let control: TestControl = viewController.control
@@ -358,6 +369,7 @@ final class ControlTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testMenuActionTriggered() {
         let viewController: TestViewController = .init()
         let control: TestControl = viewController.control
@@ -375,6 +387,7 @@ final class ControlTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testPrimaryActionTriggered() {
         let viewController: TestViewController = .init()
         let control: TestControl = viewController.control
@@ -392,6 +405,7 @@ final class ControlTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testEditingDidBegin() {
         let viewController: TestViewController = .init()
         let control: TestControl = viewController.control
@@ -409,6 +423,7 @@ final class ControlTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testEditingChanged() {
         let viewController: TestViewController = .init()
         let control: TestControl = viewController.control
@@ -426,6 +441,7 @@ final class ControlTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testEditingDidEnd() {
         let viewController: TestViewController = .init()
         let control: TestControl = viewController.control
@@ -443,6 +459,7 @@ final class ControlTests: XCTestCase {
         expect(count) == 2
     }
 
+    @MainActor
     func testEditingDidEndOnExit() {
         let viewController: TestViewController = .init()
         let control: TestControl = viewController.control

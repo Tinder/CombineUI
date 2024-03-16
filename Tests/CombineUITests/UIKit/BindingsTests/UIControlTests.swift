@@ -6,9 +6,9 @@
 import Nimble
 import XCTest
 
-@MainActor
 final class UIControlTests: XCTestCase {
 
+    @MainActor
     func testControl() {
         let control: UIControl = .init()
         expect(control.isEnabled) == true

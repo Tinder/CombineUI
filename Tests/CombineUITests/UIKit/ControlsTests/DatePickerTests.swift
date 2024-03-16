@@ -7,7 +7,6 @@ import CombineUI
 import Nimble
 import XCTest
 
-@MainActor
 final class DatePickerTests: XCTestCase {
 
     private final class TestViewController: UIViewController {
@@ -52,6 +51,7 @@ final class DatePickerTests: XCTestCase {
         super.tearDown()
     }
 
+    @MainActor
     func testCountDownDuration() {
         let viewController: TestViewController = .init()
         let datePicker: TestDatePicker = viewController.countDownTimerDatePicker
@@ -68,6 +68,7 @@ final class DatePickerTests: XCTestCase {
         expect(receivedValues) == [60, 120, 180]
     }
 
+    @MainActor
     func testDate() {
         let viewController: TestViewController = .init()
         let datePicker: TestDatePicker = viewController.datePicker

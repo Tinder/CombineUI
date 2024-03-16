@@ -6,9 +6,9 @@
 import Nimble
 import XCTest
 
-@MainActor
 final class UITextFieldTests: XCTestCase {
 
+    @MainActor
     func testFont() {
         let textField: UITextField = .init()
         expect(textField.font) == .systemFont(ofSize: 17)
@@ -16,6 +16,7 @@ final class UITextFieldTests: XCTestCase {
         expect(textField.font) == .systemFont(ofSize: 23)
     }
 
+    @MainActor
     func testTextColor() {
         let textField: UITextField = .init()
         textField.textColor = .systemMint
@@ -24,6 +25,7 @@ final class UITextFieldTests: XCTestCase {
         expect(textField.textColor) == .systemPink
     }
 
+    @MainActor
     func testTextAlignment() {
         let textField: UITextField = .init()
         expect(textField.textAlignment) == .natural
@@ -31,6 +33,7 @@ final class UITextFieldTests: XCTestCase {
         expect(textField.textAlignment) == .left
     }
 
+    @MainActor
     func testPlaceholder() {
         let textField: UITextField = .init()
         expect(textField.placeholder) == nil
@@ -38,6 +41,7 @@ final class UITextFieldTests: XCTestCase {
         expect(textField.placeholder) == "Text"
     }
 
+    @MainActor
     func testAttributedPlaceholder() {
         let textField: UITextField = .init()
         expect(textField.attributedPlaceholder?.string) == nil
@@ -45,6 +49,7 @@ final class UITextFieldTests: XCTestCase {
         expect(textField.attributedPlaceholder?.string) == "Attributed Text"
     }
 
+    @MainActor
     func testText() {
         let textField: UITextField = .init()
         expect(textField.text?.isEmpty) == true
@@ -52,6 +57,7 @@ final class UITextFieldTests: XCTestCase {
         expect(textField.text) == "Text"
     }
 
+    @MainActor
     func testAttributedText() {
         let textField: UITextField = .init()
         expect(textField.attributedText?.string.isEmpty) == true

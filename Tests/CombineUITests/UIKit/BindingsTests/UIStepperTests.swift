@@ -6,9 +6,9 @@
 import Nimble
 import XCTest
 
-@MainActor
 final class UIStepperTests: XCTestCase {
 
+    @MainActor
     func testIsContinuous() {
         let stepper: UIStepper = .init()
         expect(stepper.isContinuous) == true
@@ -16,6 +16,7 @@ final class UIStepperTests: XCTestCase {
         expect(stepper.isContinuous) == false
     }
 
+    @MainActor
     func testAutorepeat() {
         let stepper: UIStepper = .init()
         expect(stepper.autorepeat) == true
@@ -23,6 +24,7 @@ final class UIStepperTests: XCTestCase {
         expect(stepper.autorepeat) == false
     }
 
+    @MainActor
     func testWraps() {
         let stepper: UIStepper = .init()
         expect(stepper.wraps) == false
@@ -30,6 +32,7 @@ final class UIStepperTests: XCTestCase {
         expect(stepper.wraps) == true
     }
 
+    @MainActor
     func testMinimumValue() {
         let stepper: UIStepper = .init()
         expect(stepper.minimumValue) == 0
@@ -37,6 +40,7 @@ final class UIStepperTests: XCTestCase {
         expect(stepper.minimumValue) == 1
     }
 
+    @MainActor
     func testMaximumValue() {
         let stepper: UIStepper = .init()
         expect(stepper.maximumValue) == 100
@@ -44,6 +48,7 @@ final class UIStepperTests: XCTestCase {
         expect(stepper.maximumValue) == 200
     }
 
+    @MainActor
     func testStepValue() {
         let stepper: UIStepper = .init()
         expect(stepper.stepValue) == 1
@@ -51,6 +56,7 @@ final class UIStepperTests: XCTestCase {
         expect(stepper.stepValue) == 10
     }
 
+    @MainActor
     func testValue() {
         let stepper: UIStepper = .init()
         expect(stepper.value) == 0

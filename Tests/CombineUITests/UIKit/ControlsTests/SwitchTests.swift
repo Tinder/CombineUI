@@ -7,7 +7,6 @@ import CombineUI
 import Nimble
 import XCTest
 
-@MainActor
 final class SwitchTests: XCTestCase {
 
     private final class TestViewController: UIViewController {
@@ -44,6 +43,7 @@ final class SwitchTests: XCTestCase {
         super.tearDown()
     }
 
+    @MainActor
     func testSwitch() {
         let viewController: TestViewController = .init()
         let `switch`: TestSwitch = viewController.switch

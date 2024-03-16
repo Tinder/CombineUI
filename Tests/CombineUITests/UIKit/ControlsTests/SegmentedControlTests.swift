@@ -7,7 +7,6 @@ import CombineUI
 import Nimble
 import XCTest
 
-@MainActor
 final class SegmentedControlTests: XCTestCase {
 
     private final class TestViewController: UIViewController {
@@ -44,6 +43,7 @@ final class SegmentedControlTests: XCTestCase {
         super.tearDown()
     }
 
+    @MainActor
     func testSegmentedControl() {
         let viewController: TestViewController = .init()
         let segmentedControl: TestSegmentedControl = viewController.segmentedControl

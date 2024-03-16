@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@MainActor
 internal final class ScrollViewDelegate: NSObject, UIScrollViewDelegate {
 
     // swiftlint:disable private_subject
@@ -23,12 +24,6 @@ internal final class ScrollViewDelegate: NSObject, UIScrollViewDelegate {
     internal let didChangeAdjustedContentInset: PassthroughSubject<Void, Never> = .init()
 
     // swiftlint:enable private_subject
-
-    internal func delegatePublisher<T, U>(
-        for keyPath: KeyPath<ScrollViewDelegate, PassthroughSubject<T, U>>
-    ) -> AnyPublisher<T, U> {
-        self[keyPath: keyPath].eraseToAnyPublisher()
-    }
 
     // MARK: - UIScrollViewDelegate
 

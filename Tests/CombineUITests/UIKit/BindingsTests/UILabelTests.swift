@@ -6,9 +6,9 @@
 import Nimble
 import XCTest
 
-@MainActor
 final class UILabelTests: XCTestCase {
 
+    @MainActor
     func testIsEnabled() {
         let label: UILabel = .init()
         expect(label.isEnabled) == true
@@ -16,6 +16,7 @@ final class UILabelTests: XCTestCase {
         expect(label.isEnabled) == false
     }
 
+    @MainActor
     func testFont() {
         let label: UILabel = .init()
         expect(label.font) == .systemFont(ofSize: 17)
@@ -23,6 +24,7 @@ final class UILabelTests: XCTestCase {
         expect(label.font) == .systemFont(ofSize: 23)
     }
 
+    @MainActor
     func testTextColor() {
         let label: UILabel = .init()
         label.textColor = .systemMint
@@ -31,6 +33,7 @@ final class UILabelTests: XCTestCase {
         expect(label.textColor) == .systemPink
     }
 
+    @MainActor
     func testText() {
         let label: UILabel = .init()
         expect(label.text) == nil
@@ -38,6 +41,7 @@ final class UILabelTests: XCTestCase {
         expect(label.text) == "Text"
     }
 
+    @MainActor
     func testAttributedText() {
         let label: UILabel = .init()
         expect(label.attributedText) == nil

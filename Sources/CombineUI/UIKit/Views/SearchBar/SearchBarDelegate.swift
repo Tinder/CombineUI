@@ -5,6 +5,7 @@
 import Combine
 import UIKit
 
+@MainActor
 internal final class SearchBarDelegate: NSObject, UISearchBarDelegate {
 
     // swiftlint:disable private_subject
@@ -19,12 +20,6 @@ internal final class SearchBarDelegate: NSObject, UISearchBarDelegate {
     internal let selectedScopeButtonIndexDidChange: PassthroughSubject<Int, Never> = .init()
 
     // swiftlint:enable private_subject
-
-    internal func delegatePublisher<T, U>(
-        for keyPath: KeyPath<SearchBarDelegate, PassthroughSubject<T, U>>
-    ) -> AnyPublisher<T, U> {
-        self[keyPath: keyPath].eraseToAnyPublisher()
-    }
 
     // MARK: - UISearchBarDelegate
 

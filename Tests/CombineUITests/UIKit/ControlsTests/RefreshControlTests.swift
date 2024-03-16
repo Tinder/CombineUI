@@ -7,7 +7,6 @@ import CombineUI
 import Nimble
 import XCTest
 
-@MainActor
 final class RefreshControlTests: XCTestCase {
 
     private final class TestViewController: UIViewController {
@@ -63,6 +62,7 @@ final class RefreshControlTests: XCTestCase {
         super.tearDown()
     }
 
+    @MainActor
     func testRefreshControl() {
         let viewController: TestViewController = .init()
         let refreshControl: TestRefreshControl = viewController.refreshControl
