@@ -44,7 +44,7 @@ final class UIRefreshControlTests: XCTestCase {
     }
 
     @MainActor
-    func testRefreshControl() {
+    func testIsRefreshing() {
         let refreshControl: TestRefreshControl = .init()
         expect(refreshControl.isRefreshing) == false
         refreshControl.bindable.isRefreshing.receiveValue(true)
