@@ -155,6 +155,27 @@ Bindings
   </thead>
   <tbody>
     <tr>
+      <td rowspan="7"><code>UIActivityIndicatorView</code></td>
+      <td><code>style</code></td>
+      <td><code>UIActivityIndicatorView.Style</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>color</code></td>
+      <td><code>UIColor</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>hidesWhenStopped</code></td>
+      <td><code>Bool</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td><code>isAnimating</code></td>
+      <td><code>Bool</code></td>
+    </tr>
+    <tr></tr>
+    <tr>
       <td rowspan="11"><code>UIButton</code></td>
       <td><code>titleColor(for: UIControl.State)</code></td>
       <td><code>UIColor</code></td>
@@ -676,6 +697,7 @@ Extension Methods
 ## Documentation
 
 - UIKit
+  - [UIActivityIndicatorView](#uiactivityindicatorview)
   - [UIButton](#uibutton)
   - [UIControl](#uicontrol)
   - [UIDatePicker](#uidatepicker)
@@ -697,6 +719,39 @@ Extension Methods
   - [UIViewController](#uiviewcontroller)
 - [Caveats](#caveats)
 - [Customization](#customization)
+
+## `UIActivityIndicatorView`
+
+### Bindings
+
+```swift
+var style: Binding<UIActivityIndicatorView.Style>
+var color: Binding<UIColor>
+var hidesWhenStopped: Binding<Bool>
+var isAnimating: Binding<Bool>
+```
+
+### Code Example
+
+```swift
+let activityIndicatorView = UIActivityIndicatorView()
+
+Just(.medium)
+    .bind(to: activityIndicatorView.bindable.style)
+    .store(in: &cancellables)
+
+Just(.systemPink)
+    .bind(to: activityIndicatorView.bindable.color)
+    .store(in: &cancellables)
+
+Just(true)
+    .bind(to: activityIndicatorView.bindable.hidesWhenStopped)
+    .store(in: &cancellables)
+
+Just(true)
+    .bind(to: activityIndicatorView.bindable.isAnimating)
+    .store(in: &cancellables)
+```
 
 ## `UIButton`
 
