@@ -14,7 +14,6 @@ class MenuViewController: UICollectionViewController {
         ("UIDatePicker", DatePickerExample.self),
         ("UIGestureRecognizer", GestureRecognizerExample.self),
         ("UIPageControl", PageControlExample.self),
-        ("UIProgressView", ProgressViewExample.self),
         ("UIRefreshControl", RefreshControlExample.self),
         ("UIScrollView", ScrollViewExample.self),
         ("UISearchBar", SearchBarExample.self),

@@ -118,7 +118,7 @@ lifecycle
 
 Additional examples are available within [an Xcode project included in this repository](Example/). See the [example project README containing setup instructions](Example/) for guidance.
 
-<img src="Example/Examples.png" width="234" />
+<img src="Example/Examples.png" width="393" />
 
 ## Cheat Sheets
 
@@ -133,7 +133,6 @@ Property Wrappers
 | `UIDatePicker` | `@DatePicker` | `DatePickerInterface` <tr></tr> |
 | `UIGestureRecognizer` | `@GestureRecognizer` | `GestureRecognizerInterface` <tr></tr> |
 | `UIPageControl` | `@PageControl` | `AnyPublisher<Int, Never>` <tr></tr> |
-| `UIProgressView` | `@ProgressView` | `AnyPublisher<Float, Never>` <tr></tr> |
 | `UIRefreshControl` | `@RefreshControl` | `AnyPublisher<Void, Never>` <tr></tr> |
 | `UIScrollView` | `@ScrollView` | `ScrollViewInterface` <tr></tr> |
 | `UISearchBar` | `@SearchBar` | `SearchBarInterface` <tr></tr> |
@@ -617,12 +616,6 @@ Extension Methods
       <td><code>UIPageControl</code></td>
       <td><code>currentPagePublisher()</code></td>
       <td><code>AnyPublisher&lt;Int, Never&gt;</code></td>
-    </tr>
-    <tr></tr>
-    <tr>
-      <td><code>UIProgressView</code></td>
-      <td><code>progressPublisher()</code></td>
-      <td><code>AnyPublisher&lt;Float, Never&gt;</code></td>
     </tr>
     <tr></tr>
     <tr>
@@ -1146,16 +1139,6 @@ pageControl
 
 ## `UIProgressView`
 
-| Property |
-| :-- |
-| `.progress` <tr></tr> |
-
-### Property Wrapper
-
-```swift
-@ProgressView // Projected Value: AnyPublisher<Float, Never>
-```
-
 ### Bindings
 
 ```swift
@@ -1166,24 +1149,10 @@ var progress: Binding<Float>
 func progress(animated: Bool) -> Binding<Float>
 ```
 
-### Extension Method
-
-```swift
-func progressPublisher() -> AnyPublisher<Float, Never>
-```
-
 ### Code Example
 
 ```swift
-// Property Wrapper
-
-@ProgressView var progressView = UIProgressView()
-
-$progressView
-    .sink { progress in }
-    .store(in: &cancellables)
-
-// Bindings
+let progressView = UIProgressView()
 
 Just(.systemPink)
     .bind(to: progressView.bindable.trackTintColor)
@@ -1200,28 +1169,6 @@ Just(1)
 Just(1)
     .bind(to: progressView.bindable.progress(animated: true))
     .store(in: &cancellables)
-
-// Extension Method
-
-progressView
-    .progressPublisher()
-    .sink { progress in }
-    .store(in: &cancellables)
-```
-
-### Notes
-
-- Due to `UIProgressView` behavior, only non-animated progress is published unless monkey-patched, for example:
-
-```swift
-class ProgressView: UIProgressView {
-
-    override func setProgress(_ progress: Float, animated: Bool) {
-        willChangeValue(for: \.progress)
-        super.setProgress(progress, animated: animated)
-        didChangeValue(for: \.progress)
-    }
-}
 ```
 
 ## `UIRefreshControl`
