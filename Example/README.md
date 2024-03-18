@@ -1,6 +1,6 @@
 # CombineUI Example Project
 
-<img src="Examples.png" width="234" />
+<img src="Examples.png" width="393" />
 
 ## Project Setup
 
