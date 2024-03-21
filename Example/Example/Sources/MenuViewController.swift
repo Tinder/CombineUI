@@ -22,6 +22,7 @@ class MenuViewController: UICollectionViewController {
         ("UIStepper", StepperExample.self),
         ("UISwitch", SwitchExample.self),
         ("UITextField", TextFieldExample.self),
+        ("UITextView", TextViewExample.self),
         ("UIViewController", ViewControllerExample.self)
     ]
 

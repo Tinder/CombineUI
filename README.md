@@ -118,7 +118,7 @@ lifecycle
 
 Additional examples are available within [an Xcode project included in this repository](Example/). See the [example project README containing setup instructions](Example/) for guidance.
 
-<img src="Example/Examples.png" width="393" />
+<img src="Example/Examples.png" width="234" />
 
 ## Cheat Sheets
 
