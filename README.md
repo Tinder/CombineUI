@@ -1797,8 +1797,13 @@ textField
 `TextViewInterface`
 
 ```swift
+// Properties
+
 var text: AnyPublisher<String, Never>
 var attributedText: AnyPublisher<AttributedString, Never>
+
+// UITextViewDelegate
+
 var didBeginEditing: AnyPublisher<Void, Never>
 var didEndEditing: AnyPublisher<Void, Never>
 var didChangeSelection: AnyPublisher<Void, Never>
