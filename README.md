@@ -1804,6 +1804,7 @@ var attributedText: AnyPublisher<AttributedString, Never>
 
 // UITextViewDelegate
 
+var didChange: AnyPublisher<Void, Never>
 var didBeginEditing: AnyPublisher<Void, Never>
 var didEndEditing: AnyPublisher<Void, Never>
 var didChangeSelection: AnyPublisher<Void, Never>
