@@ -68,6 +68,23 @@ final class TextViewTests: XCTestCase {
     }
 
     @MainActor
+    func testDidChange() {
+        let viewController: TestViewController = .init()
+        let textView: UITextView = viewController.textView
+        var count: Int = 0
+        viewController
+            .$textView
+            .didChange
+            .sink { count += 1 }
+            .store(in: &cancellables)
+        expect(count) == 0
+        textView.delegate?.textViewDidChange?(textView)
+        expect(count) == 1
+        textView.delegate?.textViewDidChange?(textView)
+        expect(count) == 2
+    }
+
+    @MainActor
     func testDidBeginEditing() {
         let viewController: TestViewController = .init()
         let textView: UITextView = viewController.textView

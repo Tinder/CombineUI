@@ -9,8 +9,6 @@ import UIKit
 @MainActor
 public struct TextViewInterface<T: UITextView> {
 
-    // MARK: - UITextViewDelegate
-
     public private(set) lazy var text: AnyPublisher<String, Never> = { @MainActor in
         delegate
             .didChange
@@ -26,6 +24,16 @@ public struct TextViewInterface<T: UITextView> {
             .map(\.attributedText)
             .prepend(textView.attributedText)
             .map { $0.flatMap { AttributedString($0) } ?? AttributedString("") }
+            .share()
+            .eraseToAnyPublisher()
+    }()
+
+    // MARK: - UITextViewDelegate
+
+    public private(set) lazy var didChange: AnyPublisher<Void, Never> = { @MainActor in
+        delegate
+            .didChange
+            .replaceOutput(with: Void())
             .share()
             .eraseToAnyPublisher()
     }()
