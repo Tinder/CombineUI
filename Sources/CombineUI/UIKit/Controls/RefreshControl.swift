@@ -27,10 +27,7 @@ extension UIRefreshControl {
     @preconcurrency
     @MainActor
     public func refreshPublisher() -> AnyPublisher<Void, Never> {
-        publisher(for: .valueChanged)
-            .compactMap(bindable)
-            .map(\.isRefreshing)
-            .filter { $0 }
+        publisher(for: .primaryActionTriggered)
             .replaceOutput(with: Void())
             .eraseToAnyPublisher()
     }
