@@ -118,7 +118,7 @@ lifecycle
 
 Additional examples are available within [an Xcode project included in this repository](Example/). See the [example project README containing setup instructions](Example/) for guidance.
 
-<img src="Example/Examples.png" width="393" />
+<img src="Example/Examples.png" width="234" />
 
 ## Cheat Sheets
 
@@ -141,6 +141,7 @@ Property Wrappers
 | `UIStepper` | `@Stepper` | `AnyPublisher<Double, Never>` <tr></tr> |
 | `UISwitch` | `@Switch` | `AnyPublisher<Bool, Never>` <tr></tr> |
 | `UITextField` | `@TextField` | `TextFieldInterface` <tr></tr> |
+| `UITextView` | `@TextView` | `TextViewInterface` <tr></tr> |
 | `UIViewController` | `@ViewController` | `ViewControllerInterface` <tr></tr> |
 
 Bindings
@@ -1783,6 +1784,32 @@ textField
 
 ## `UITextView`
 
+| Protocol |
+| :-- |
+| `UITextViewDelegate` <tr></tr> |
+
+### Property Wrapper
+
+```swift
+@TextView // Projected Value: TextViewInterface
+```
+
+`TextViewInterface`
+
+```swift
+// Properties
+
+var text: AnyPublisher<String, Never>
+var attributedText: AnyPublisher<AttributedString, Never>
+
+// UITextViewDelegate
+
+var didChange: AnyPublisher<Void, Never>
+var didBeginEditing: AnyPublisher<Void, Never>
+var didEndEditing: AnyPublisher<Void, Never>
+var didChangeSelection: AnyPublisher<Void, Never>
+```
+
 ### Bindings
 
 ```swift
@@ -1797,7 +1824,21 @@ var attributedText: Binding<AttributedString>
 ### Code Example
 
 ```swift
-let textView = UITextView()
+// Property Wrapper
+
+@TextView var textView = UITextView()
+
+$textView
+    .text
+    .sink { text in }
+    .store(in: &cancellables)
+
+$textView
+    .attributedText
+    .sink { attributedText in }
+    .store(in: &cancellables)
+
+// Bindings
 
 Just(true)
     .bind(to: textView.bindable.isEditable)
