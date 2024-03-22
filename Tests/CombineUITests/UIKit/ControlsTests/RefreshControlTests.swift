@@ -16,30 +16,15 @@ final class RefreshControlTests: XCTestCase {
 
     private final class TestRefreshControl: UIRefreshControl {
 
-        override var isRefreshing: Bool {
-            _isRefreshing
-        }
-
-        // swiftlint:disable:next redundant_type_annotation
-        private var _isRefreshing: Bool = false
-
         private(set) var targets: [ObjectIdentifier: ControlTarget] = [:]
-
-        override func beginRefreshing() {
-            _isRefreshing = true
-        }
-
-        override func endRefreshing() {
-            _isRefreshing = false
-        }
 
         func invoke(_ isRefreshing: Bool) {
             if isRefreshing {
                 beginRefreshing()
+                targets.values.forEach { $0.primaryActionTriggered() }
             } else {
                 endRefreshing()
             }
-            targets.values.forEach { $0.valueChanged() }
         }
 
         override func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event) {
