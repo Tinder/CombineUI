@@ -1734,11 +1734,6 @@ $textField
     .sink { attributedText in }
     .store(in: &cancellables)
 
-$textField
-    .didChangeSelection
-    .sink { print("Selecting") }
-    .store(in: &cancellables)
-
 // Bindings
 
 Just(.preferredFont(forTextStyle: .body))
