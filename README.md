@@ -50,12 +50,26 @@ UIKit is currently supported. CombineUI may support additional UI frameworks in 
 
 ## Installation
 
-**Swift Package Manager Dependency**
+### Swift Package Manager
+
+**Package Dependency**
 
 > Replace `<version>` with the desired minimum version.
 
 ```swift
 .package(url: "https://github.com/Tinder/CombineUI.git", from: "<version>")
+```
+
+**Target Dependency**
+
+```
+"CombineUI"
+```
+
+### Swift Package Collection
+
+```swift
+https://swiftpackageindex.com/Tinder/collection.json
 ```
 
 ## Code Examples
