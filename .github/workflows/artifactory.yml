@@ -4,13 +4,10 @@ on:
   push:
     tags: ['[0-9]+.[0-9]+.[0-9]+']
 
-env:
-  DEVELOPER_DIR: /Applications/Xcode_15.0.app/Contents/Developer
-
 jobs:
   artifactory:
     name: Artifactory
-    runs-on: macos-13
+    runs-on: macos-latest
     concurrency:
       group: ${{ github.ref_name }}
       cancel-in-progress: true
@@ -18,7 +15,7 @@ jobs:
     - name: Install dependencies
       run: brew install jfrog-cli
     - name: Checkout source
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Archive
       run: tar -czf "CombineUI-${GITHUB_REF_NAME}.tar.gz" Sources
     - name: Upload
