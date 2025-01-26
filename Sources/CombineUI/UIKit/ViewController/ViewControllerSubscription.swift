@@ -30,6 +30,7 @@ internal final class ViewControllerSubscription
         self.viewController = viewController
     }
 
+    // swiftlint:disable:next unused_parameter
     internal func request(_ demand: Subscribers.Demand) {
         perform(#selector(start), on: .main, with: nil, waitUntilDone: true)
     }

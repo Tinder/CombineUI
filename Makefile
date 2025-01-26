@@ -1,9 +1,3 @@
-#
-#  The SwiftLint recipes require the Swift Package Resources scripts to be installed.
-#
-#  https://github.com/TinderApp/Swift-Package-Resources#installation
-#
-
 .PHONY: open
 open: fix
 open:
@@ -24,11 +18,12 @@ fix:
 .PHONY: lint
 lint: format ?= emoji
 lint:
-	@swiftlint lint --strict --progress --reporter "$(format)"
+	@swift package plugin \
+		swiftlint lint --strict --progress --reporter "$(format)"
 
 .PHONY: analyze
 analyze: target ?= CombineUI
-analyze: destination ?= generic/platform=macOS
+analyze: destination ?= generic/platform=iOS
 analyze: format ?= emoji
 analyze:
 	@DERIVED_DATA="$$(mktemp -d)"; \
@@ -38,10 +33,28 @@ analyze:
 		-destination "$(destination)" \
 		-derivedDataPath "$$DERIVED_DATA" \
 		-configuration "Debug" \
+		-skipPackagePluginValidation \
 		CODE_SIGNING_ALLOWED="NO" \
 		> "$$XCODEBUILD_LOG"; \
-	swiftlint analyze --strict --progress --reporter "$(format)" --compiler-log-path "$$XCODEBUILD_LOG"
+	swift package plugin \
+		swiftlint analyze --strict --progress --reporter "$(format)" --compiler-log-path "$$XCODEBUILD_LOG"
 
-.PHONY: rules
-rules:
-	@swiftlint rules | lint-rules
+.PHONY: docs
+docs: target ?= CombineUI
+docs: destination ?= generic/platform=iOS
+docs: open ?= OPEN
+docs: DERIVED_DATA_PATH = .build/documentation/data
+docs: ARCHIVE_PATH = .build/documentation/archive
+docs:
+	@mkdir -p "$(DERIVED_DATA_PATH)" "$(ARCHIVE_PATH)"
+	xcodebuild docbuild \
+		-scheme "$(target)" \
+		-destination "$(destination)" \
+		-derivedDataPath "$(DERIVED_DATA_PATH)" \
+		-skipPackagePluginValidation \
+		OTHER_DOCC_FLAGS="--warnings-as-errors"
+	@find "$(DERIVED_DATA_PATH)" \
+		-type d \
+		-name "$(target).doccarchive" \
+		-exec cp -R {} "$(ARCHIVE_PATH)/" \;
+	$(if $(filter $(open),OPEN),@open "$(ARCHIVE_PATH)/$(target).doccarchive",)

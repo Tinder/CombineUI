@@ -18,6 +18,8 @@ internal final class TextFieldDelegate: NSObject, UITextFieldDelegate {
 
     // MARK: - UITextFieldDelegate
 
+    // swiftlint:disable unused_parameter
+
     internal func textFieldDidBeginEditing(
         _ textField: UITextField
     ) {
@@ -35,4 +37,6 @@ internal final class TextFieldDelegate: NSObject, UITextFieldDelegate {
     ) {
         didChangeSelection.send()
     }
+
+    // swiftlint:enable unused_parameter
 }

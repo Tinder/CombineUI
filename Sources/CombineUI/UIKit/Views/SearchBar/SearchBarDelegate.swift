@@ -23,6 +23,8 @@ internal final class SearchBarDelegate: NSObject, UISearchBarDelegate {
 
     // MARK: - UISearchBarDelegate
 
+    // swiftlint:disable unused_parameter
+
     internal func searchBarTextDidBeginEditing(
         _ searchBar: UISearchBar
     ) {
@@ -72,4 +74,6 @@ internal final class SearchBarDelegate: NSObject, UISearchBarDelegate {
     ) {
         selectedScopeButtonIndexDidChange.send(selectedScope)
     }
+
+    // swiftlint:enable unused_parameter
 }

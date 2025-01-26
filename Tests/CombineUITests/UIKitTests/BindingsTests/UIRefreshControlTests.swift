@@ -14,7 +14,6 @@ final class UIRefreshControlTests: XCTestCase {
             _isRefreshing
         }
 
-        // swiftlint:disable:next redundant_type_annotation
         private var _isRefreshing: Bool = false
 
         override func beginRefreshing() {

@@ -19,6 +19,8 @@ internal final class TextViewDelegate: NSObject, UITextViewDelegate {
 
     // MARK: - UITextViewDelegate
 
+    // swiftlint:disable unused_parameter
+
     internal func textViewDidChange(
         _ textView: UITextView
     ) {
@@ -42,4 +44,6 @@ internal final class TextViewDelegate: NSObject, UITextViewDelegate {
     ) {
         didChangeSelection.send()
     }
+
+    // swiftlint:enable unused_parameter
 }

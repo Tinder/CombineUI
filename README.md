@@ -1,6 +1,6 @@
 [![Swift](https://github.com/Tinder/CombineUI/actions/workflows/swift.yml/badge.svg?event=push)](https://github.com/Tinder/CombineUI/actions/workflows/swift.yml)
 &nbsp;
-[![Bazel](https://github.com/Tinder/CombineUI/actions/workflows/bazel.yml/badge.svg?event=push)](https://github.com/Tinder/CombineUI/actions/workflows/bazel.yml)
+[![DocC](https://github.com/Tinder/CombineUI/actions/workflows/docc.yml/badge.svg?event=push)](https://github.com/Tinder/CombineUI/actions/workflows/docc.yml)
 &nbsp;
 [![Artifactory](https://github.com/Tinder/CombineUI/actions/workflows/artifactory.yml/badge.svg?event=push)](https://github.com/Tinder/CombineUI/actions/workflows/artifactory.yml)
 
@@ -45,7 +45,7 @@ UIKit is currently supported. CombineUI may support additional UI frameworks in 
 
 ## Minimum Requirements
 
-- iOS `14.0`
+- iOS `15.0`
 - Swift `5.8`
 
 ## Installation
