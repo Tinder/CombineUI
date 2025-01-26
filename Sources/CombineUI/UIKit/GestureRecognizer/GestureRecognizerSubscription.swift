@@ -24,6 +24,7 @@ internal final class GestureRecognizerSubscription
         self.view = view
     }
 
+    // swiftlint:disable:next unused_parameter
     internal func request(_ demand: Subscribers.Demand) {
         perform(#selector(start), on: .main, with: nil, waitUntilDone: true)
     }

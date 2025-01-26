@@ -2,7 +2,6 @@
 //  Copyright © 2024 Tinder (Match Group, LLC)
 //
 
-import Combine
 import UIKit
 
 extension Bindable where Target: UITextView {

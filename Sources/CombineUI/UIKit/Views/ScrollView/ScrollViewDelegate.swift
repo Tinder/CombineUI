@@ -27,6 +27,8 @@ internal final class ScrollViewDelegate: NSObject, UIScrollViewDelegate {
 
     // MARK: - UIScrollViewDelegate
 
+    // swiftlint:disable unused_parameter
+
     internal func scrollViewDidScroll(
         _ scrollView: UIScrollView
     ) {
@@ -106,4 +108,6 @@ internal final class ScrollViewDelegate: NSObject, UIScrollViewDelegate {
     ) {
         didChangeAdjustedContentInset.send()
     }
+
+    // swiftlint:enable unused_parameter
 }
