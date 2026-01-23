@@ -1,8 +1,6 @@
 [![Swift](https://github.com/Tinder/CombineUI/actions/workflows/swift.yml/badge.svg?event=push)](https://github.com/Tinder/CombineUI/actions/workflows/swift.yml)
 &nbsp;
 [![DocC](https://github.com/Tinder/CombineUI/actions/workflows/docc.yml/badge.svg?event=push)](https://github.com/Tinder/CombineUI/actions/workflows/docc.yml)
-&nbsp;
-[![Artifactory](https://github.com/Tinder/CombineUI/actions/workflows/artifactory.yml/badge.svg?event=push)](https://github.com/Tinder/CombineUI/actions/workflows/artifactory.yml)
 
 # CombineUI
 
