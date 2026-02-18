@@ -33,12 +33,13 @@ jobs:
         xcodebuild
         build-for-testing
         -scheme "CombineUI"
+        -configuration Release
         -destination "name=$SIMULATOR,OS=latest"
         -skipPackagePluginValidation
-        SWIFT_TREAT_WARNINGS_AS_ERRORS=YES
     - name: Test
       run: >
         xcodebuild
         test-without-building
         -scheme "CombineUI"
+        -configuration Release
         -destination "name=$SIMULATOR,OS=latest"

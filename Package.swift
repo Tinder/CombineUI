@@ -26,7 +26,10 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "CombineUI"),
+            name: "CombineUI",
+            swiftSettings: [
+                .unsafeFlags(["-warnings-as-errors"], .when(configuration: .release)),
+            ]),
         .testTarget(
             name: "CombineUITests",
             dependencies: [
