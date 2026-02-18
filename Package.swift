@@ -1,6 +1,9 @@
-// swift-tools-version:5.8
+// swift-tools-version:5.10
 
+import Foundation
 import PackageDescription
+
+let enableSwiftLintBuildToolPlugin = ProcessInfo.processInfo.environment["CODEQL_DIST"] == nil
 
 let package = Package(
     name: "CombineUI",
@@ -16,10 +19,10 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/realm/SwiftLint.git",
-            exact: "0.56.2"),
+            exact: "0.59.1"),
         .package(
             url: "https://github.com/Quick/Nimble.git",
-            exact: "13.4.0"),
+            exact: "14.0.0"),
     ],
     targets: [
         .target(
@@ -30,7 +33,7 @@ let package = Package(
                 "CombineUI",
                 "Nimble",
             ]),
-    ]
+    ],
 )
 
 package.targets.forEach { target in
@@ -39,7 +42,9 @@ package.targets.forEach { target in
         .enableExperimentalFeature("StrictConcurrency"),
     ]
 
-    target.plugins = [
-        .plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLint"),
-    ]
+    if enableSwiftLintBuildToolPlugin {
+        target.plugins = [
+            .plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLint"),
+        ]
+    }
 }
