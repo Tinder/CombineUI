@@ -41,5 +41,4 @@ jobs:
         xcodebuild
         test-without-building
         -scheme "CombineUI"
-        -configuration Release
         -destination "name=$SIMULATOR,OS=latest"
