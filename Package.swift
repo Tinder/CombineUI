@@ -49,7 +49,7 @@ package.targets.forEach { target in
             // TODO: Remove unsafe flag upon upgrading to Swift tools v6.2 and uncomment subsequent settings:
             .unsafeFlags(["-warnings-as-errors"]),
 //            .treatAllWarnings(as: .error),
-//            .treatWarning("DeprecatedDeclaration", as: .warning)
+//            .treatWarning("DeprecatedDeclaration", as: .warning),
         ]
     }
 
