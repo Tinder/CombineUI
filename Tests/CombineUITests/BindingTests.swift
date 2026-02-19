@@ -35,7 +35,8 @@ final class BindingTests: XCTestCase {
     func testBinding() {
         let subject: PassthroughSubject<Int, Never> = .init()
         var object: TestObject? = .init()
-        weak var weakObject: TestObject? = object
+        weak var weakObject: TestObject?
+        weakObject = object
         expect(weakObject) != nil
         if let object: TestObject {
             subject
