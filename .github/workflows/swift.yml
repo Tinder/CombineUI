@@ -33,7 +33,6 @@ jobs:
         xcodebuild
         build-for-testing
         -scheme "CombineUI"
-        -configuration Release
         -destination "name=$SIMULATOR,OS=latest"
         -skipPackagePluginValidation
     - name: Test
