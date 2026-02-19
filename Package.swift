@@ -3,7 +3,10 @@
 import Foundation
 import PackageDescription
 
-let enableSwiftLintBuildToolPlugin = ProcessInfo.processInfo.environment["CODEQL_DIST"] == nil
+let environment = ProcessInfo.processInfo.environment
+
+let treatWarningsAsErrors = environment["CI"] == "true"
+let enableSwiftLintBuildToolPlugin = environment["CODEQL_DIST"] == nil
 
 let package = Package(
     name: "CombineUI",
@@ -26,10 +29,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "CombineUI",
-            swiftSettings: [
-                .unsafeFlags(["-warnings-as-errors"], .when(configuration: .release)),
-            ]),
+            name: "CombineUI"),
         .testTarget(
             name: "CombineUITests",
             dependencies: [
@@ -41,12 +41,20 @@ let package = Package(
 
 package.targets.forEach { target in
 
-    target.swiftSettings = [
-        .enableExperimentalFeature("StrictConcurrency"),
-    ]
+    // TODO: Remove upon enabling Swift 6 language mode:
+    target.swiftSettings = (target.swiftSettings ?? []) + [.enableExperimentalFeature("StrictConcurrency")]
+
+    if treatWarningsAsErrors {
+        target.swiftSettings = (target.swiftSettings ?? []) + [
+            // TODO: Remove unsafe flag upon upgrading to Swift tools v6.2 and uncomment subsequent settings:
+            .unsafeFlags(["-warnings-as-errors"]),
+//            .treatAllWarnings(as: .error),
+//            .treatWarning("DeprecatedDeclaration", as: .warning)
+        ]
+    }
 
     if enableSwiftLintBuildToolPlugin {
-        target.plugins = [
+        target.plugins = (target.plugins ?? []) + [
             .plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLint"),
         ]
     }
