@@ -36,7 +36,7 @@ let package = Package(
                 "CombineUI",
                 "Nimble",
             ]),
-    ],
+    ]
 )
 
 package.targets.forEach { target in

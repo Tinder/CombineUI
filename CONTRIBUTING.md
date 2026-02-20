@@ -2,6 +2,7 @@
 
 - [Open Package](#open-package)
 - [Lint Package](#lint-package)
+- [Testing](#testing)
 - [Creating Releases](#creating-releases)
 
 ## Open Package
@@ -26,6 +27,14 @@ To run analysis rules:
 
 ```
 make analyze
+```
+
+## Testing
+
+To re-record all existing snapshot references, delete all using the following command and then run the tests.
+
+```
+make delete-snapshots
 ```
 
 ## Creating Releases
