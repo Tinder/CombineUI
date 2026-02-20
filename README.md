@@ -41,14 +41,21 @@ Many types are also enhanced with Swift extensions providing Combine publishers 
 
 UIKit is currently supported. CombineUI may support additional UI frameworks in the future.
 
-## Minimum Requirements
-
-- iOS `15.0`
-- Swift `5.8`
-
 ## Installation
 
+### Swift Package Collection
+
+<details><summary>Expand / Collapse</summary><br>
+
+```
+https://swiftpackageindex.com/Tinder/collection.json
+```
+
+</details>
+
 ### Swift Package Manager
+
+<details><summary>Expand / Collapse</summary><br>
 
 **Package Dependency**
 
@@ -60,15 +67,29 @@ UIKit is currently supported. CombineUI may support additional UI frameworks in 
 
 **Target Dependency**
 
-```
+```swift
 "CombineUI"
 ```
 
-### Swift Package Collection
+</details>
 
-```swift
-https://swiftpackageindex.com/Tinder/collection.json
+### Xcode
+
+<details><summary>Expand / Collapse</summary><br>
+
+**Package Dependency**
+
 ```
+https://github.com/Tinder/CombineUI.git
+```
+
+**Target Dependency**
+
+```
+CombineUI
+```
+
+</details>
 
 ## Code Examples
 
