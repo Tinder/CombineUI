@@ -39,6 +39,14 @@ analyze:
 	swift package plugin \
 		swiftlint analyze --strict --progress --reporter "$(format)" --compiler-log-path "$$XCODEBUILD_LOG"
 
+.PHONY: delete-snapshots
+delete-snapshots:
+	@for snapshots in $$(find Tests -type d -name "__Snapshots__"); \
+	do \
+		rm -rf "$$snapshots"; \
+		echo "Deleted $$snapshots"; \
+	done
+
 .PHONY: docs
 docs: target ?= CombineUI
 docs: destination ?= generic/platform=iOS
